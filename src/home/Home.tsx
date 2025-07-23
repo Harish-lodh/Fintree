@@ -87,7 +87,6 @@ const Home = () => {
         </div>
       </div>
       <FAQ/>
-<Footer/>
     </div>
   );
 };

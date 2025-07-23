@@ -1,6 +1,6 @@
 
 import { Linkedin, Facebook, Twitter, ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
-
+import logo from '../../assets/nav-logo.jpeg'
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -11,19 +11,19 @@ const Footer = () => {
       icon: <Linkedin className="w-5 h-5" />, 
       bgColor: 'bg-blue-900', 
       hoverColor: 'hover:bg-blue-900',
-      href: '#' 
+      href: 'http://linkedin.com/company/fintree-finance/' 
     },
     { 
       icon: <Facebook className="w-5 h-5" />, 
       bgColor: 'bg-blue-600', 
       hoverColor: 'hover:bg-blue-800',
-      href: '#' 
+      href: 'https://www.facebook.com/profile.php?id=100064084087872#' 
     },
     { 
       icon: <Twitter className="w-5 h-5" />, 
       bgColor: 'bg-blue-400', 
       hoverColor: 'hover:bg-blue-500',
-      href: '#' 
+      href: 'https://x.com/fintreel?lang=en' 
     },
   ];
 
@@ -46,8 +46,8 @@ const Footer = () => {
           <div className="space-y-6">
             {/* Logo Section */}
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-gray-900 font-bold text-xl">F</span>
+              <div className="w-20 h-20  rounded-lg flex items-center justify-center shadow-md">
+                <span className="text-gray-900 font-bold "><img src={logo} className='' /></span>
               </div>
               <div>
                 <h3 className="text-white font-bold text-2xl mb-1">FinTree</h3>
