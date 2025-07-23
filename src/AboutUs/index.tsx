@@ -1,31 +1,5 @@
-import React from 'react'
-
 const About = () => {
   return (
-//     <div>
-//         <p>With over <b>six years of experience</b> in the lending sector, Fintree Finance has established itself as a trusted partner for Enterprises /SMEs (Small and Medium Enterprises)/ Medical / Personal/ Consumer Durable/ EV Financing across India. Our leadership team, with over 130 years of combined experience, brings deep industry insights and financial expertise to help businesses grow and succeed.</p>
-//         <br />
-//         <p>We leverage cutting-edge technology, data analytics, and a digital-first approach to offer a wide range of financial solutions, including:</p>
-
-//         <ol className="list-decimal pl-5 space-y-2 text-gray-800">
-//           <li>Loan Against Property – Unlocking the value of your assets.</li>
-//           <li>Supply Chain Financing – Supporting businesses with working capital needs.</li>
-//           <li>Express Small Business Loans – Quick and hassle-free funding for MSMEs.</li>
-//           <li>Consumer Durable Loans – Easy financing for essential purchases.</li>
-//           <li>Educational & Medical Loans – Making quality education and healthcare accessible.</li>
-//           <li>EV Finance – Driving sustainability with tailored financing for electric vehicles.</li>
-//         </ol>
-
-//       <br />
-//     <p>Through strategic co-lending partnerships and a tech-driven lending ecosystem, we ensure faster approvals, minimal documentation, and competitive interest rates. Our vision is to uplift underserved businesses, drive financial inclusion, creating long-term economic impact.</p>
-//     <br />
-
-//     <p>At Fintree Finance, we bring finance to your doorstep, making borrowing easy, transparent, and efficient. Whether you're a startup, a growing business, or an individual in need, we are here to help you achieve your goals.</p>
-//     <br />
-//     <p>In official terms, the Ministry of MSME reports that there are over 1 crore registered MSMEs (which include micro, small, and medium enterprises)—roughly 10 million formal units. However, broader studies that also consider unregistered or informal enterprises estimate that the total number of SMEs in India is around 63 million.</p>
-// <br />
-//     <p>Fintree Finance leverages advanced technology and in-depth financial expertise to provide MSMEs with tailored, scalable, and fast financial solutions, fueling their growth and facilitating their integration into the formal economy.</p>
-//     </div>
 
 <div className="max-w-7xl mx-auto px-6 py-12 text-gray-800 leading-relaxed">
 
