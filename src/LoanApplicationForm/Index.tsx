@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import Select from "react-select";
+import bg from '../../src/assets/img/bg-img.png'
 
 interface FormData {
   loanType: string;
@@ -172,10 +173,13 @@ const LoanApplicationForm = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10">
-      <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">Loan Application Form</h2>
-        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+  <div
+    className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end"
+    style={{ backgroundImage: `url(${bg})` }}
+  >
+    <div className="w-full max-w-xl mr-10 my-3 p-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-lg">
+      <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
+      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
             <label className="block font-medium mb-1 text-gray-700">Type of Loan</label>
             {renderSelect("loanType", selectOptions.loanType)}

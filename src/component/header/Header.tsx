@@ -48,7 +48,7 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden lg:flex space-x-6 text-xl font-semibold relative">
             <a
-              href="#"
+             
               onClick={() => handleNav("/")}
               className="hover:text-blue-700 transition"
             >
