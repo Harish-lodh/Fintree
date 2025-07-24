@@ -144,15 +144,18 @@ const LoanApplicationForm = () => {
 
   const selectOptions = {
     loanType: [
-      { value: "LAB", label: "LAB" },
+      { value: "LAP", label: "LAP" },
       { value: "Supply Chain", label: "Supply Chain" },
       { value: "EV Financing", label: "EV Financing" },
+      { value: "Consumer Durable", label: "Consumer Durable" },
     ],
     constitution: [
       { value: "Proprietorship", label: "Proprietorship Firm" },
       { value: "Partnership", label: "Partnership Firm" },
       { value: "Trust", label: "Trust" },
       { value: "Company", label: "Company" },
+      { value: "Individual", label: "Individual" },
+
     ],
     gstRegistered: [
       { value: "Yes", label: "Yes" },
@@ -181,7 +184,7 @@ const LoanApplicationForm = () => {
       <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
-            <label className="block font-medium mb-1 text-gray-700">Type of Loan</label>
+            <label className="block font-medium mb-1 text-gray-700">Type of Loan <span className="text-red-600">*</span></label>
             {renderSelect("loanType", selectOptions.loanType)}
             {errors.loanType && <p className="text-red-500 text-sm">{errors.loanType}</p>}
           </div>
@@ -194,7 +197,7 @@ const LoanApplicationForm = () => {
               { id: "dob", type: "date", label: "Date of Birth", max: new Date().toISOString().split("T")[0] },
             ].map(({ id, type, label, ...rest }) => (
               <div key={id}>
-                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">{label}</label>
+                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">{label} <span className="text-red-600">*</span></label>
                 <input
                   id={id}
                   type={type}
@@ -214,8 +217,10 @@ const LoanApplicationForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {["pincode", "city", "state"].map((id) => (
               <div key={id}>
-                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">{id.charAt(0).toUpperCase() + id.slice(1)}</label>
-                <input
+    <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
+        {id.charAt(0).toUpperCase() + id.slice(1)}
+        {id !== "pincode" && <span className="text-red-600"> *</span>}
+      </label>                <input
                   id={id}
                   type="text"
                   name={id}
@@ -231,7 +236,7 @@ const LoanApplicationForm = () => {
           </div>
 
           <div>
-            <label className="block font-medium mb-1 text-gray-700">Loan Amount</label>
+            <label className="block font-medium mb-1 text-gray-700">Loan Amount <span className="text-red-600">*</span></label>
             <input
               type="number"
               name="loanAmount"
@@ -244,7 +249,7 @@ const LoanApplicationForm = () => {
           </div>
 
           <div>
-            <label className="block font-medium mb-1 text-gray-700">Constitution Type</label>
+            <label className="block font-medium mb-1 text-gray-700">Constitution Type <span className="text-red-600">*</span></label>
             {renderSelect("constitution", selectOptions.constitution)}
             {errors.constitution && <p className="text-red-500 text-sm">{errors.constitution}</p>}
           </div>
@@ -276,7 +281,7 @@ const LoanApplicationForm = () => {
           </div>
 
           <div>
-            <label className="block font-medium mb-1 text-gray-700">Registered on GST Portal?</label>
+            <label className="block font-medium mb-1 text-gray-700">Registered on GST Portal? <span className="text-red-600">*</span></label>
             {renderSelect("gstRegistered", selectOptions.gstRegistered)}
             {errors.gstRegistered && <p className="text-red-500 text-sm">{errors.gstRegistered}</p>}
           </div>

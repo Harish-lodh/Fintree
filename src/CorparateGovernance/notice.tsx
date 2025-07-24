@@ -1,5 +1,4 @@
-import { FaFilePdf } from "react-icons/fa";
-
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 const notices = [
   { title: "Notice of AGM 2024", link: "https://fintreefinance.com/wp-content/uploads/2024/10/Signed-Notice_AGM_2024.pdf" },
   { title: "Notice of AGM 2023", link: "https://fintreefinance.com/wp-content/uploads/2024/02/Notice-of-AGM-2023.pdf" },
@@ -23,8 +22,8 @@ const AGMNotices = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded transition"
           >
-            <FaFilePdf />
-            {notice.label || "Download Now"}
+            <PictureAsPdfIcon />
+            {notice.label || "Download Pdf"}
           </a>
         </div>
       ))}

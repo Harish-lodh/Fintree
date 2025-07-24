@@ -7,7 +7,6 @@ import mdai from '../assets/lending/SDAl.jpg'
 import Carousel from '../component/carousel';
 import ServiceList from '../component/ServiceList';
 import FAQ from '../component/FAQ\'s';
-import Footer from '../component/footer';
 import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
@@ -19,8 +18,8 @@ const Home = () => {
 <div className="bg-stone-600 w-full p-2">
   <div className="flex justify-end items-center space-x-4 mr-6">
     <ul className="flex space-x-4">
-      <li className="text-white font-semibold hover:underline cursor-pointer">Secured Loan</li>
-      <li className="text-white font-semibold hover:underline cursor-pointer">Secured Loan</li>
+      <li className="text-white font-semibold hover:underline cursor-pointer">Supply chain</li>
+      <li className="text-white font-semibold hover:underline cursor-pointer">EV finance</li>
       <li className="text-white font-semibold hover:underline cursor-pointer">Secured Loan</li>
     </ul>
     <button

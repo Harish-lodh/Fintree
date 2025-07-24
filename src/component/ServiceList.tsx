@@ -2,10 +2,7 @@
 import ServiceCard from "./services/index";
 
 const services = [
-  {
-    title: "Express Small Business Loans",
-    description: "Fast unsecured loans up to ₹10 lakhs for MSMEs using digital transaction data.",
-  },
+
   {
     title: "Supply Chain Financing",
     description: "Working capital support for supplier–buyer networks.",
@@ -18,10 +15,7 @@ const services = [
     title: "Consumer Durable Loans",
     description: "Financing for electronics and appliances purchases.",
   },
-  {
-    title: "Educational & Medical Loans",
-    description: "Loans for tuition fees and healthcare expenses.",
-  },
+
   {
     title: "EV Financing",
     description: "Loans to purchase electric vehicles for individuals or businesses.",
@@ -34,7 +28,7 @@ const ServiceList = () => {
       <h2 className="text-3xl font-bold text-center text-blue-800 mb-8">
         Fintree Finance Services
       </h2>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 lg:mx-25 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
         {services.map((service, index) => (
           <ServiceCard key={index} title={service.title} description={service.description} />
         ))}

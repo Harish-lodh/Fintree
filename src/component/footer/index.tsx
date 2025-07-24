@@ -38,7 +38,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-4 relative min-h-96">
+    <footer className="bg-gray-900 text-gray-300 py-8 px-4 relative min-h-70">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
@@ -161,7 +161,7 @@ const Footer = () => {
             {/* Additional Info */}
             <div className="grid grid-cols-1 gap-4">
               {/* Nodal Officer */}
-              <div className="p-4 bg-gray-800 rounded-lg border border-gray-700">
+              <div className="p-2 bg-gray-800 rounded-lg border border-gray-700">
                 <h5 className="text-white font-medium text-xs uppercase tracking-wider mb-2 flex items-center">
                   <Phone className="w-3 h-3 mr-2" />
                   Nodal Officer - Sweta Parekh
@@ -173,7 +173,7 @@ const Footer = () => {
               </div>
 
               {/* CIN */}
-              <div className="p-4 bg-gray-800 rounded-lg border border-gray-700">
+              <div className="p-2 bg-gray-800 rounded-lg border border-gray-700">
                 <h5 className="text-white font-medium text-xs uppercase tracking-wider mb-2 flex items-center">
                   <span className="mr-2">🏢</span> CIN No
                 </h5>
@@ -183,17 +183,22 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-sm">© 2025 Fintree Finance. All rights reserved.</p>
+    
+          </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-700 mt-12 pt-8">
+        {/* <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">© 2025 Fintree Finance. All rights reserved.</p>
             <div className="flex items-center space-x-4 text-xs text-gray-500">
               <span>Made with ❤️ in Mumbai</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Material Design Floating Action Button */}
