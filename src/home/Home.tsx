@@ -39,7 +39,7 @@ const Home = () => {
     </div>
 
       <Carousel />
-      <div className="flex justify-center my-12 px-4">
+      <div className="flex  justify-center my-12 px-4">
         <div className="max-w-6xl w-full flex flex-col md:flex-row justify-center items-center gap-2">
           <div className="w-full justify-center md:w-1/2">
             <img

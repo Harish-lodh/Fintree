@@ -1,8 +1,9 @@
-import React, { useState, useMemo, useEffect } from "react";
+import  { useState, useMemo, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import LaunchIcon from "@mui/icons-material/Launch";
+import contactBanner from '../../assets/img/contact-banner.jpg'
 
 const lspData = [
   {
@@ -168,13 +169,22 @@ const LSPTable = () => {
   };
 
   return (
+    <>
+    <div
+  className="w-full h-64 bg-cover bg-center"
+  style={{ backgroundImage: `url(${contactBanner})` }}
+>
+  
+</div>
+
     <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+
 
   
 
       {/* Controls */}
-      <div className="p-6 bg-gray-50 border-b">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-42 py-6  bg-gray-50 border-b ">
+        <div className="flex flex-col sm:flex-row  justify-between items-center gap-4">
           <div className="relative flex-1 max-w-sm">
             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
@@ -205,7 +215,7 @@ const LSPTable = () => {
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className=" mx-auto">
+        <table className="px-4 sm:px-8 md:px-16 lg:px-42 py-6 mx-auto">
           <thead className="bg-gray-100 border-b-2 border-gray-200">
             <tr>
               {["S.NO", "Name of LSP", "App Name", "Product", "Website"].map((head, i) => (
@@ -253,7 +263,7 @@ const LSPTable = () => {
       </div>
 
       {/* Pagination */}
- <div className="bg-gray-50 px-6 py-4 border-t">
+ <div className="bg-gray-50 px-4 sm:px-8 md:px-16 lg:px-42 py-6  border-t">
   <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
     <div className="text-sm text-gray-700">
       Showing {startIndex + 1} to {Math.min(endIndex, filteredData.length)} of{" "}
@@ -261,7 +271,7 @@ const LSPTable = () => {
       {searchTerm && ` (filtered from ${lspData.length})`}
     </div>
 
-    <div className="flex items-center space-x-3">
+    <div className="flex items-center space-x-3 ">
       <button
         onClick={() => setCurrentPage((prev) => prev - 1)}
         disabled={currentPage === 1}
@@ -286,6 +296,7 @@ const LSPTable = () => {
 </div>
 
     </div>
+    </>
   );
 };
 

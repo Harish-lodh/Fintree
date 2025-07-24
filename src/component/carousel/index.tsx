@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { IconButton } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import img1 from './carousel/img1.png';
-import img2 from './carousel/img.png';
+import img1 from '../../assets/carousel/1.png';
+import img2 from '../../assets/carousel/2.png';
 
 const images = [img1, img2];
 

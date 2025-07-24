@@ -1,5 +1,6 @@
 
 import './App.css'
+
 import Header from './component/header/Header'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './home/Home';
@@ -18,7 +19,7 @@ export default function App() {
     <>
       <Router>
         <Header />
-        <main className="mt-16 lg:mt-18">
+        <main className="mt-16 lg:mt-18  ">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Form" element={<LoanApplicationForm />} />

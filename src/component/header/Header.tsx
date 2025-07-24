@@ -11,27 +11,28 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const navigate = useNavigate();
+  const [isselected, setIsselected] = useState("home");
 
   const productLinks = [
-    { 
-      name: "Loan Against Property", 
+    {
+      name: "Loan Against Property",
       route: "products/loan-against-property",
-      description: "Secure loans with your property as collateral"
+      description: "Secure loans with your property as collateral",
     },
-    { 
-      name: "Supply Chain Finance", 
+    {
+      name: "Supply Chain Finance",
       route: "products/supply-chain-finance",
-      description: "Optimize your supply chain cash flow"
+      description: "Optimize your supply chain cash flow",
     },
-    { 
-      name: "FinTech", 
+    {
+      name: "FinTech",
       route: "products/fintech",
-      description: "Digital financial solutions"
+      description: "Digital financial solutions",
     },
-    { 
-      name: "NACH Cancellation", 
+    {
+      name: "NACH Cancellation",
       route: "products/nach-cancellation",
-      description: "Cancel your NACH mandates easily"
+      description: "Cancel your NACH mandates easily",
     },
   ];
 
@@ -49,13 +50,15 @@ const Header = () => {
     { name: "Compromise & Settlement Policy", route: "/compromise-settlement" },
   ];
 
-  const handleNav = (route: string) => {
+  const handleNav = (route: string, selected?: string) => {
     navigate(route);
     setHoveredMenu(null);
+    if (selected) setIsselected(selected);
+    setMenuOpen(false); // also closes mobile menu
   };
 
   return (
-    <header className="w-full shadow-lg bg-white fixed top-0 z-50">
+    <header className="w-full  shadow-lg bg-white fixed top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 lg:py-2">
         <div className="flex items-center flex-shrink-0 my-0">
           <img src={logo} alt="FinTree Logo" className="w-24 h-auto object-contain" />
@@ -65,8 +68,10 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden lg:flex space-x-6 text-xl font-semibold relative">
             <button
-              onClick={() => handleNav("/")}
-              className="hover:text-blue-700 transition-colors duration-200"
+              onClick={() => handleNav("/", "home")}
+              className={`hover:text-blue-700 transition-colors duration-200 ${
+                isselected === "home" ? "text-blue-700" : ""
+              }`}
             >
               Home
             </button>
@@ -79,36 +84,33 @@ const Header = () => {
             >
               <button className="flex items-center gap-1 hover:text-blue-700 transition-colors duration-200">
                 Product
-                <ChevronDownIcon className={`transition-transform duration-200 ${
-                  hoveredMenu === "product" ? "rotate-180" : ""
-                }`} />
+                <ChevronDownIcon
+                  className={`transition-transform duration-200 ${
+                    hoveredMenu === "product" ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-              
-              {/* Products Dropdown Menu */}
-              <div className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
-                hoveredMenu === "product" 
-                  ? "opacity-100 visible transform translate-y-0" 
-                  : "opacity-0 invisible transform -translate-y-2"
-              }`}>
-                {/* <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3">
-                  <h3 className="text-white font-semibold text-lg">Our Products</h3>
-                </div> */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
+                  hoveredMenu === "product"
+                    ? "opacity-100 visible transform translate-y-0"
+                    : "opacity-0 invisible transform -translate-y-2"
+                }`}
+              >
                 <div className="py-2">
-                  {productLinks.map((link, index) => (
+                  {productLinks.map((link) => (
                     <div
                       key={link.name}
-                      onClick={() => handleNav(link.route)}
+                      onClick={() => handleNav(link.route, "product")}
                       className="group/item px-4 py-3 hover:bg-blue-50 cursor-pointer transition-colors duration-150 border-b border-gray-100 last:border-b-0"
                     >
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 group-hover/item:bg-blue-700"></div>
                         <div>
-                          <div className="font-medium text-sm text-gray-800 group-hover/item:text-blue-700 transition-colors duration-150">
+                          <div className="font-medium text-sm text-gray-800 group-hover/item:text-blue-700">
                             {link.name}
                           </div>
-                          <div className="text-xs text-gray-500 mt-1">
-                            {link.description}
-                          </div>
+                          <div className="text-xs text-gray-500 mt-1">{link.description}</div>
                         </div>
                       </div>
                     </div>
@@ -125,30 +127,29 @@ const Header = () => {
             >
               <button className="flex items-center gap-1 hover:text-blue-700 transition-colors duration-200">
                 Corporate Governance
-                <ChevronDownIcon className={`transition-transform duration-200 ${
-                  hoveredMenu === "corporate" ? "rotate-180" : ""
-                }`} />
+                <ChevronDownIcon
+                  className={`transition-transform duration-200 ${
+                    hoveredMenu === "corporate" ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-              
-              {/* Corporate Governance Dropdown Menu */}
-              <div className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
-                hoveredMenu === "corporate" 
-                  ? "opacity-100 visible transform translate-y-0" 
-                  : "opacity-0 invisible transform -translate-y-2"
-              }`}>
-                {/* <div className="bg-gradient-to-r from-gray-600 to-gray-700 px-4 py-3">
-                  <h3 className="text-white font-semibold text-lg">Corporate Governance</h3>
-                </div> */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
+                  hoveredMenu === "corporate"
+                    ? "opacity-100 visible transform translate-y-0"
+                    : "opacity-0 invisible transform -translate-y-2"
+                }`}
+              >
                 <div className="py-2 max-h-102 overflow-y-auto">
-                  {corpGovLinks.map((link, index) => (
+                  {corpGovLinks.map((link) => (
                     <div
                       key={link.name}
-                      onClick={() => handleNav(link.route)}
+                      onClick={() => handleNav(link.route, "corporate")}
                       className="group/item px-4 py-3 hover:bg-gray-50 cursor-pointer transition-colors duration-150 border-b border-gray-100 last:border-b-0"
                     >
                       <div className="flex items-center gap-3">
                         <div className="flex-shrink-0 w-2 h-2 bg-blue-700 rounded-full"></div>
-                        <div className="text-sm text-gray-800 group-hover/item:text-blue-700 transition-colors duration-150">
+                        <div className="text-sm text-gray-800 group-hover/item:text-blue-700">
                           {link.name}
                         </div>
                       </div>
@@ -157,15 +158,21 @@ const Header = () => {
                 </div>
               </div>
             </div>
-  <button
-              onClick={() => handleNav("/Lending-Service-Provider")}
-              className="hover:text-blue-700 transition-colors duration-200"
-            >
-            LendingServiceProvider
-            </button>
+
             <button
-              onClick={() => handleNav("/about")}
-              className="hover:text-blue-700 transition-colors duration-200"
+              onClick={() => handleNav("/Lending-Service-Provider", "lsp")}
+              className={`hover:text-blue-700 transition-colors duration-200 ${
+                isselected === "lsp" ? "text-blue-700" : ""
+              }`}
+            >
+              LendingServiceProvider
+            </button>
+
+            <button
+              onClick={() => handleNav("/about", "about")}
+              className={`hover:text-blue-700 transition-colors duration-200 ${
+                isselected === "about" ? "text-blue-700" : ""
+              }`}
             >
               About
             </button>
@@ -190,13 +197,11 @@ const Header = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <>
-          {/* Overlay */}
-          <div 
+          <div
             className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={() => setMenuOpen(false)}
           ></div>
-          
-          {/* Mobile Menu Panel */}
+
           <div className="lg:hidden fixed top-0 left-0 w-3/4 max-w-sm h-full bg-white shadow-2xl z-50 transform transition-transform duration-300">
             <div className="p-6">
               <div className="flex justify-between items-center mb-8">
@@ -210,15 +215,30 @@ const Header = () => {
               </div>
 
               <nav className="space-y-4 mb-8">
-                {["Home", "Products", "Feature", "Blog", "About", "Contact"].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                ))}
+                <button
+                  onClick={() => handleNav("/", "home")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  Home
+                </button>
+                <button
+                  onClick={() => handleNav("/products/loan-against-property", "product")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  Products
+                </button>
+                <button
+                  onClick={() => handleNav("/Lending-Service-Provider", "lsp")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  Lending Service Provider
+                </button>
+                <button
+                  onClick={() => handleNav("/about", "about")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  About
+                </button>
               </nav>
 
               <div className="relative mb-6">
@@ -231,7 +251,6 @@ const Header = () => {
                   className="pl-10 pr-4 py-3 w-full text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
                 />
               </div>
-              
 
               <div className="flex items-center gap-3 text-gray-700 bg-green-50 p-3 rounded-lg">
                 <CallIcon className="text-green-600" />
