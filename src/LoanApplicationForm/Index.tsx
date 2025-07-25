@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import Select from "react-select";
 import bg from '../../src/assets/img/bg-img.png'
+import { sendEmail } from "../api's/api";
 
 interface FormData {
   loanType: string;
@@ -13,7 +14,7 @@ interface FormData {
   state: string;
   loanAmount: string;
   constitution: string;
-  ownershipProof: string;
+ 
   businessYears: string;
   gstRegistered: string;
   gstin: string;
@@ -55,7 +56,7 @@ const LoanApplicationForm = () => {
     state: "",
     loanAmount: "",
     constitution: "",
-    ownershipProof: "",
+   
     businessYears: "",
     gstRegistered: "",
     gstin: "",
@@ -77,7 +78,7 @@ const LoanApplicationForm = () => {
           today.getFullYear() -
           dob.getFullYear() -
           (today.getMonth() < dob.getMonth() ||
-          (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())
+            (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())
             ? 1
             : 0);
         return age >= 21 && age <= 58
@@ -100,9 +101,6 @@ const LoanApplicationForm = () => {
         (Number(value) >= 1000 && Number(value) <= 10000000) ||
         "Loan amount must be between 1,000 and 10,000,000.",
       constitution: () => (value ? true : "Please select constitution type."),
-      ownershipProof: () =>
-        /^[A-Z0-9]{10,20}$/.test(value) ||
-        "Invalid ownership proof (e.g., Aadhaar, PAN).",
       businessYears: () =>
         (Number(value) >= 0 && Number(value) <= 100) ||
         "Years in business must be between 0 and 100.",
@@ -113,10 +111,8 @@ const LoanApplicationForm = () => {
         /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(value) ||
         "Invalid GSTIN format.",
     };
-
     return validations[name] ? validations[name]() : true;
   };
-
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -125,7 +121,7 @@ const LoanApplicationForm = () => {
     setErrors({ ...errors, [name]: error === true ? "" : error });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const newErrors: ErrorData = {};
     let isValid = true;
@@ -139,8 +135,17 @@ const LoanApplicationForm = () => {
     setErrors(newErrors);
     if (!isValid) return;
 
+    try {
+      const response = await sendEmail(form); // ✅ pass form data here
+      console.log(response)
+      alert('Application submitted successfully!');
+    } catch (err) {
+      alert('Error sending application.');
+      console.error(err);
+    }
     console.log("Form submitted:", form);
   };
+
 
   const selectOptions = {
     loanType: [
@@ -176,13 +181,13 @@ const LoanApplicationForm = () => {
   );
 
   return (
-  <div
-    className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end"
-    style={{ backgroundImage: `url(${bg})` }}
-  >
-    <div className="w-full max-w-xl mr-10 my-3 p-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-lg">
-      <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
-      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div className="w-full max-w-xl mr-10 my-3 p-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-lg">
+        <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
             <label className="block font-medium mb-1 text-gray-700">Type of Loan <span className="text-red-600">*</span></label>
             {renderSelect("loanType", selectOptions.loanType)}
@@ -217,10 +222,10 @@ const LoanApplicationForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {["pincode", "city", "state"].map((id) => (
               <div key={id}>
-    <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
-        {id.charAt(0).toUpperCase() + id.slice(1)}
-        {id !== "pincode" && <span className="text-red-600"> *</span>}
-      </label>                <input
+                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                  {id !== "pincode" && <span className="text-red-600"> *</span>}
+                </label>                <input
                   id={id}
                   type="text"
                   name={id}
@@ -254,18 +259,7 @@ const LoanApplicationForm = () => {
             {errors.constitution && <p className="text-red-500 text-sm">{errors.constitution}</p>}
           </div>
 
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Ownership Proof</label>
-            <input
-              type="text"
-              name="ownershipProof"
-              value={form.ownershipProof}
-              onChange={handleChange}
-              className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
-              required
-            />
-            {errors.ownershipProof && <p className="text-red-500 text-sm">{errors.ownershipProof}</p>}
-          </div>
+  
 
           <div>
             <label className="block font-medium mb-1 text-gray-700">Years in Business</label>
