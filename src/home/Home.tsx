@@ -1,4 +1,3 @@
-
 import about from '../assets/about_fintree.jpg';
 import FintreeLoansFeatures from '../component/features';
 import muthood from '../assets/lending/mothoot_logo.webp'
@@ -20,7 +19,7 @@ const Home = () => {
     <ul className="flex space-x-4">
       <li className="text-white font-semibold hover:underline cursor-pointer">Supply chain</li>
       <li className="text-white font-semibold hover:underline cursor-pointer">EV finance</li>
-      <li className="text-white font-semibold hover:underline cursor-pointer">Secured Loan</li>
+      <li className="text-white font-semibold hover:underline cursor-pointer">LAP</li>
     </ul>
     <button
       type="button"

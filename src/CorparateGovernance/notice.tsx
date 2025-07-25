@@ -1,10 +1,16 @@
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import notice_2024 from '../Documents/Signed-Notice_AGM_2024.pdf'
+import notice_2023 from '../Documents/Notice-of-AGM-2023.pdf'
+import notice_2022 from '../Documents/AGM-Notice-02-09-2022.pdf'
+import notice_2021 from '../Documents/Notice-of-AGM_2021.pdf'
+import notice_2020 from '../Documents/Notice-of-AGM-2020.pdf'
+
 const notices = [
-  { title: "Notice of AGM 2024", link: "https://fintreefinance.com/wp-content/uploads/2024/10/Signed-Notice_AGM_2024.pdf" },
-  { title: "Notice of AGM 2023", link: "https://fintreefinance.com/wp-content/uploads/2024/02/Notice-of-AGM-2023.pdf" },
-  { title: "Notice of AGM 2022", link: "https://fintreefinance.com/wp-content/uploads/2022/09/AGM-Notice-02-09-2022.pdf" },
-  { title: "Notice of AGM 2021", link: "https://fintreefinance.com/wp-content/uploads/2022/03/Notice-of-AGM_2021.pdf", label: "Download PDF" },
-  { title: "Notice of AGM 2020", link: "https://fintreefinance.com/wp-content/uploads/2024/02/Notice-of-AGM-2020.pdf" },
+  { title: "Notice of AGM 2024", link: `${notice_2024}` },
+  { title: "Notice of AGM 2023", link: `${notice_2023}` },
+  { title: "Notice of AGM 2022", link: `${notice_2022}` },
+  { title: "Notice of AGM 2021", link: `${notice_2021}` },
+  { title: "Notice of AGM 2020", link: `${notice_2020}` },
 ];
 
 const AGMNotices = () => {
