@@ -1,6 +1,8 @@
 
 import { Linkedin, Facebook, Twitter, ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '../../assets/nav-logo.jpeg'
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -27,15 +29,21 @@ const Footer = () => {
     },
   ];
 
-  const quickLinks = ['Home', 'About Us', 'Products', 'Contact Us'];
-  const otherLinks = [
-    'Terms of Service',
-    'Fintree Privacy Policy', 
-    'Certificates',
-    'Schedule of Charges',
-    'CMS Portal',
-    'Sachet Portal'
-  ];
+const quickLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about' },
+  { name: 'Contact Us', path: '/contact' }
+];
+
+const otherLinks = [
+  { name: 'Terms of Service', path: '/terms-of-service' },
+  { name: 'Fintree Privacy Policy', path: '/privacy-policy' },
+  { name: 'Certificates', path: '/certificates' },
+  { name: 'Schedule of Charges', path: '/schedule-of-charges' },
+  { name: 'CMS Portal', path: '/cms-portal' },
+  { name: 'Sachet Portal', path: 'https://sachet.rbi.org.in/' }
+];
+
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-8 px-4 relative min-h-70">
@@ -81,53 +89,54 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-              <span className="mr-2">⚡</span> Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href="#" 
-                    className="
-                      text-gray-400 hover:text-white text-sm 
-                      transition-all duration-300 ease-out 
-                      block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
-                      focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
-                    "
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+    {/* Quick Links */}
+<div>
+  <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
+    <span className="mr-2">⚡</span> Quick Links
+  </h4>
+  <ul className="space-y-3">
+    {quickLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          to={link.path}
+          className="
+            text-gray-400 hover:text-white text-sm 
+            transition-all duration-300 ease-out 
+            block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
+            focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
+          "
+        >
+          {link.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
-          {/* Other Links */}
-          <div>
-            <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-              <span className="mr-2">🔗</span> Other Links
-            </h4>
-            <ul className="space-y-3">
-              {otherLinks.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href="#" 
-                    className="
-                      text-gray-400 hover:text-white text-sm 
-                      transition-all duration-300 ease-out 
-                      block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
-                      focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
-                    "
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+{/* Other Links */}
+<div>
+  <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
+    <span className="mr-2">🔗</span> Other Links
+  </h4>
+  <ul className="space-y-3">
+    {otherLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          to={link.path}
+          className="
+            text-gray-400 hover:text-white text-sm 
+            transition-all duration-300 ease-out 
+            block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
+            focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
+          "
+        >
+          {link.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
           {/* Corporate Office */}
           <div className="space-y-6">

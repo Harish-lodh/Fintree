@@ -1,12 +1,12 @@
 import about from '../assets/about_fintree.jpg';
 import FintreeLoansFeatures from '../component/features';
-import muthood from '../assets/lending/mothoot_logo.webp'
-import nfcpl from '../assets/lending/NFCPL.png'
-import mdai from '../assets/lending/SDAl.jpg'
+
 import Carousel from '../component/carousel';
 import ServiceList from '../component/ServiceList';
 import FAQ from '../component/FAQ\'s';
 import { useNavigate } from 'react-router-dom';
+import Awards from '../component/awards';
+import Partners from '../component/partners';
 const Home = () => {
   const navigate = useNavigate();
     const handleClick = () => {
@@ -73,17 +73,8 @@ const Home = () => {
       <ServiceList />
 
       <FintreeLoansFeatures />
-   
-      <div className=" flex flex-col items-center  my-10 mx-4">
-        <div className="text-blue-800 text-3xl text-center font-bold mb-4">
-          Co-lending Partners
-        </div>
-        <div className="flex gap-8 justify-center items-center w-30">
-          <img src={muthood} alt="lending Fintree" />
-          <img src={nfcpl} alt="lending Fintree" className="w-20" />
-          <img src={mdai} alt="lending Fintree" />
-        </div>
-      </div>
+   <Awards/>
+<Partners/>
       <FAQ/>
     </div>
   );

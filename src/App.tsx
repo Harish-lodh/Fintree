@@ -14,6 +14,8 @@ import ResignationOfDirector from './CorparateGovernance/ResignationOfDirector.t
 import AGMNotices from './CorparateGovernance/notice.tsx';
 import LSPTable from './component/LSPtable/index.tsx';
 import MGTNotices from './CorparateGovernance/MGT.tsx';
+
+import TermsOfServices from './component/termsOfServices/index.tsx';
 export default function App() {
   return (
     <>
@@ -32,7 +34,7 @@ export default function App() {
             <Route path="corporate-governance/AGMNotices" element={<AGMNotices />} />
             <Route path="corporate-governance/MGT-7" element={<MGTNotices/>} />
             <Route path='lending-service-provider' element={<LSPTable/>}/>
-            
+            <Route path='/terms-of-service' element={<TermsOfServices/>}/>
             <Route path='/about' element={<About />} />
           </Routes>
           <Footer />
