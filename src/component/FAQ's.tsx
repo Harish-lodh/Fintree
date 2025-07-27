@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle, Sparkles } from 'lucide-react';
+
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState<Record<string | number, boolean>>({ 1: true });
@@ -72,7 +74,7 @@ const FAQ = () => {
                           ? 'bg-gradient-to-r from-blue-700 to-green-500 text-white' 
                           : 'bg-gray-100 text-gray-400 group-hover:bg-blue-100 group-hover:text-blue-500'
                       }`}>
-                        <Sparkles className="w-4 h-4" />
+                        <AutoAwesomeIcon className="w-4 h-4" />
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors duration-300 pr-4">
@@ -83,7 +85,7 @@ const FAQ = () => {
                     openItems[item.id] ? 'transform rotate-180' : ''
                   }`}>
                     <div className="p-2 rounded-full bg-gradient-to-r from-blue-800 to-green-300 text-white">
-                      <ChevronDown className="w-5 h-5" />
+                      <ExpandMoreIcon className="w-5 h-5" />
                     </div>
                   </div>
                 </div>

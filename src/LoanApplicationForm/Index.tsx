@@ -90,7 +90,7 @@ const LoanApplicationForm = () => {
         "Mobile must be a 10-digit number starting with 6, 7, 8, or 9.",
       email: () =>
         /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value) || "Invalid email address.",
-      pincode: () => /^\d{6}$/.test(value) || "Pincode must be a 6-digit number.",
+      pincode: () =>  !value ||/^\d{6}$/.test(value) || "Pincode must be a 6-digit number.",
       city: () =>
         /^[a-zA-Z\s]{2,50}$/.test(value) ||
         "City must be 2-50 characters, letters and spaces only.",

@@ -41,7 +41,7 @@ const MGTNotices = () => {
                 py: 1.2,
               }}
             >
-              Download Now
+              View Now
             </Button>
           </Box>
         ))}

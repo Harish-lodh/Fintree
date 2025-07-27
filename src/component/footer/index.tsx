@@ -1,5 +1,11 @@
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-import { Linkedin, Facebook, Twitter, ChevronUp, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '../../assets/nav-logo.jpeg'
 import { Link } from 'react-router-dom';
 
@@ -8,39 +14,40 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const socialIcons = [
-    { 
-      icon: <Linkedin className="w-5 h-5" />, 
-      bgColor: 'bg-blue-900', 
-      hoverColor: 'hover:bg-blue-900',
-      href: 'http://linkedin.com/company/fintree-finance/' 
-    },
-    { 
-      icon: <Facebook className="w-5 h-5" />, 
-      bgColor: 'bg-blue-600', 
-      hoverColor: 'hover:bg-blue-800',
-      href: 'https://www.facebook.com/profile.php?id=100064084087872#' 
-    },
-    { 
-      icon: <Twitter className="w-5 h-5" />, 
-      bgColor: 'bg-blue-400', 
-      hoverColor: 'hover:bg-blue-500',
-      href: 'https://x.com/fintreel?lang=en' 
-    },
-  ];
+const socialIcons = [
+  { 
+    icon: <LinkedInIcon className="!w-7 !h-7" />, 
+    bgColor: 'bg-blue-900', 
+    hoverColor: 'hover:bg-blue-900',
+    href: 'http://linkedin.com/company/fintree-finance/' 
+  },
+  { 
+    icon: <FacebookIcon className="!w-7 !h-7" />, 
+    bgColor: 'bg-blue-600', 
+    hoverColor: 'hover:bg-blue-800',
+    href: 'https://www.facebook.com/profile.php?id=100064084087872#' 
+  },
+  { 
+    icon: <TwitterIcon className="!w-7 !h-7" />, 
+    bgColor: 'bg-blue-400', 
+    hoverColor: 'hover:bg-blue-500',
+    href: 'https://x.com/fintreel?lang=en' 
+  },
+];
+
 
 const quickLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Contact Us', path: '/contact' }
+  { name: 'About Us', path: '/about-us' },
+  { name: 'Contact Us', path: '/contact-us' }
 ];
 
 const otherLinks = [
   { name: 'Terms of Service', path: '/terms-of-service' },
   { name: 'Fintree Privacy Policy', path: '/privacy-policy' },
-  { name: 'Certificates', path: '/certificates' },
-  { name: 'Schedule of Charges', path: '/schedule-of-charges' },
-  { name: 'CMS Portal', path: '/cms-portal' },
+  // { name: 'Certificates', path: '/certificates' },
+  // { name: 'Schedule of Charges', path: '/schedule-of-charges' },
+  // { name: 'CMS Portal', path: '/cms-portal' },
   { name: 'Sachet Portal', path: 'https://sachet.rbi.org.in/' }
 ];
 
@@ -143,7 +150,8 @@ const otherLinks = [
             {/* Main Office */}
             <div>
               <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-                <MapPin className="w-4 h-4 mr-2" /> Corporate Office - Mumbai
+               <LocationOnIcon className="!w-4 !h-4 mr-2" />
+ Corporate Office - Mumbai
               </h4>
               <div className="space-y-2 text-sm">
                 <p className="text-white font-medium">Fintree Finance Pvt. Ltd.</p>
@@ -161,7 +169,7 @@ const otherLinks = [
                     focus:outline-none focus:text-blue-300
                   "
                 >
-                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
+                  <EmailIcon className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                   <span>wecarefintree@gmail.com</span>
                 </a>
               </div>
@@ -172,11 +180,11 @@ const otherLinks = [
               {/* Nodal Officer */}
               <div className="p-2 bg-gray-800 rounded-lg border border-gray-700">
                 <h5 className="text-white font-medium text-xs uppercase tracking-wider mb-2 flex items-center">
-                  <Phone className="w-3 h-3 mr-2" />
+                  <PhoneIcon className="w-3 h-3 mr-2" />
                   Nodal Officer - Sweta Parekh
                 </h5>
                 <p className="text-gray-400 text-sm flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-green-500" />
+                  <PhoneIcon className="w-4 h-4 mr-2 text-green-500" />
                   18002678111
                 </p>
               </div>
@@ -215,7 +223,7 @@ const otherLinks = [
         onClick={scrollToTop}
         className="
           fixed bottom-6 right-6 w-10 h-10 
-          bg-blue-600 hover:bg-blue-700 active:bg-blue-800
+          bg-blue-800 hover:bg-blue-700 active:bg-blue-800
           rounded-full shadow-lg hover:shadow-xl 
           flex items-center justify-center text-white 
           transition-all duration-300 ease-out 
@@ -225,7 +233,7 @@ const otherLinks = [
         "
         aria-label="Back to top"
       >
-        <ChevronUp className="w-6 h-6 group-hover:animate-bounce" />
+        <KeyboardArrowUpIcon className="w-6 h-6  group-hover:animate-bounce" />
       </button>
     </footer>
   );

@@ -29,7 +29,7 @@ const AGMNotices = () => {
             className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded transition"
           >
             <PictureAsPdfIcon />
-            {notice.label || "Download Pdf"}
+            { "View Pdf"}
           </a>
         </div>
       ))}

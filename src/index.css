@@ -18,3 +18,17 @@
     transform: translateX(-100%);
   }
 }
+
+
+/* @font-face {
+  font-family: 'roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 2. Then apply it globally */
+/* * {
+  font-family: 'roboto';
+} */
+

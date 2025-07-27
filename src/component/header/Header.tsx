@@ -39,15 +39,15 @@ const Header = () => {
   const corpGovLinks = [
     { name: "Resignation of Director", route: "corporate-governance/resignation-of-director" },
     { name: "Notice of Annual General Meeting", route: "corporate-governance/AGMNotices" },
-    { name: "MGT-7", route: "/mgt-7" },
-    { name: "Corporate Social Responsibility", route: "/csr" },
-    { name: "DSA Code of Conduct", route: "/dsa-code" },
-    { name: "Grievance Redressal Mechanism", route: "/grievance-redressal" },
-    { name: "CKYC", route: "/ckyc" },
-    { name: "Policies", route: "/policies" },
-    { name: "Customer Education", route: "/customer-education" },
-    { name: "Ombudsman Scheme", route: "/ombudsman-scheme" },
-    { name: "Compromise & Settlement Policy", route: "/compromise-settlement" },
+    { name: "MGT-7", route: "corporate-governance/MGT-7" },
+    { name: "Corporate Social Responsibility", route: "corporate-governance/csr" },
+    { name: "DSA Code of Conduct", route: "corporate-governance/dsa-code" },
+    { name: "Grievance Redressal Mechanism", route: "corporate-governance/grievance-redressal" },
+    { name: "CKYC", route: "corporate-governance/ckyc" },
+    { name: "Policies", route: "corporate-governance/policies" },
+    { name: "Customer Education", route: "corporate-governance/customer-education" },
+    { name: "Ombudsman Scheme", route: "corporate-governance/ombudsman-scheme" },
+    { name: "Compromise & Settlement Policy", route: "corporate-governance/compromise-settlement" },
   ];
 
   const handleNav = (route: string, selected?: string) => {
@@ -169,12 +169,12 @@ const Header = () => {
             </button>
 
             <button
-              onClick={() => handleNav("/about", "about")}
+              onClick={() => handleNav("/about-us", "about")}
               className={`hover:text-blue-700 transition-colors duration-200 ${
                 isselected === "about" ? "text-blue-700" : ""
               }`}
             >
-              About
+              About-Us
             </button>
           </nav>
 
@@ -234,7 +234,7 @@ const Header = () => {
                   Lending Service Provider
                 </button>
                 <button
-                  onClick={() => handleNav("/about", "about")}
+                  onClick={() => handleNav("/about-us", "about")}
                   className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
                 >
                   About
