@@ -2,12 +2,18 @@ import { Button, Container, Stack, Typography, Box } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf"
 ;
 
+import pdf1 from '../Documents/MGT-7_23-24.pdf'
+import pdf2 from '../Documents/FORM_MGT-7-FY_22-23.pdf'
+import pdf3 from '../Documents/FORM_MGT-7-FY_21-22.pdf'
+import pdf4 from '../Documents/FORM_MGT-7-FY_20-21.pdf'
+import pdf5 from '../Documents/FORM_MGT-7-FY_19-20.pdf';
+
 const downloadLinks = [
-  { label: "MGT-7 2023-24", url: "" },
-  { label: "MGT-7 2022-23", url: "/pdfs/MGT7_2022_23.pdf" },
-  { label: "MGT-7 2021-22", url: "/pdfs/MGT7_2021_22.pdf" },
-  { label: "MGT-7 2020-21", url: "/pdfs/MGT7_2020_21.pdf" },
-  { label: "MGT-7 2019-20", url: "/pdfs/MGT7_2019_20.pdf" },
+  { label: "MGT-7 2023-24", url: pdf1 },
+  { label: "MGT-7 2022-23", url: pdf2 },
+  { label: "MGT-7 2021-22", url: pdf3 },
+  { label: "MGT-7 2020-21", url: pdf4 },
+  { label: "MGT-7 2019-20", url:pdf5},
 ];
 
 const MGTNotices = () => {
