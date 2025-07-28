@@ -4,7 +4,9 @@ import interestmodel from "../Documents/INTEREST-RATE-MODEL-1.3.pdf"
 import fairpractise from "../Documents/Fair-Practices-Code-v3.pdf"
 import itoutstanding from "../Documents/IT-Outsourcing-Policy.pdf"
 import auditpolicy from "../Documents/FFPL-Audit-Policy.pdf"
+ import cg from '../assets/img/corporate-governance.webp'
 
+ 
 const policies = [
   { title: 'Interest Rate Model', link: `${interestmodel}` },
   { title: 'Fair Practice Code', link: `${fairpractise}` },
@@ -14,6 +16,11 @@ const policies = [
 
 const PolicyDownloads = () => {
   return (
+    <>
+   
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Box sx={{ px: 2, py: 6 }}>
       <Box
         sx={{
@@ -62,6 +69,7 @@ const PolicyDownloads = () => {
         ))}
       </Box>
     </Box>
+    </>
   );
 };
 

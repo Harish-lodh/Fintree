@@ -1,9 +1,12 @@
 import { Box, Button, Typography, Container } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import compromise from "../Documents/Compromise-Settlement-Technical-Write-off-Policy_V.01.pdf"
-
+import cg from '../assets/img/corporate-governance.webp'
 const CompromisePolicy = () => {
   return (
+    <>  <div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Container maxWidth="lg">
       <Box
         sx={{
@@ -36,6 +39,7 @@ const CompromisePolicy = () => {
         </Button>
       </Box>
     </Container>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import notice_2023 from '../Documents/Notice-of-AGM-2023.pdf'
 import notice_2022 from '../Documents/AGM-Notice-02-09-2022.pdf'
 import notice_2021 from '../Documents/Notice-of-AGM_2021.pdf'
 import notice_2020 from '../Documents/Notice-of-AGM-2020.pdf'
-
+import cg from '../assets/img/corporate-governance.webp'
 const notices = [
   { title: "Notice of AGM 2024", link: `${notice_2024}` },
   { title: "Notice of AGM 2023", link: `${notice_2023}` },
@@ -15,6 +15,10 @@ const notices = [
 
 const AGMNotices = () => {
   return (
+    <>
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <div className="max-w-4xl mx-auto p-6">
       {notices.map((notice, index) => (
         <div
@@ -34,6 +38,7 @@ const AGMNotices = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

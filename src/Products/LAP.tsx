@@ -1,10 +1,14 @@
+
+import lapImage from '../assets/product-img/products-img.jpg'
+
+
 const LAP = () => {
   return (
     <div className="bg-gradient-to-r from-[#043347] to-[#0d5c8b] py-12 px-6 md:px-16 text-white flex flex-col md:flex-row items-center gap-10">
       
       {/* Image Section */}
       <div className="flex-1">
-        {/* <img src={lapImage} alt="Loan Against Property" className="w-full max-w-md mx-auto" /> */}
+        <img src={lapImage} alt="Loan Against Property" className="w-full max-w-md mx-auto" />
       </div>
 
       {/* Content Section */}

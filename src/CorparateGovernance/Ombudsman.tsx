@@ -3,7 +3,7 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { useTheme } from '@mui/material/styles';
 import Ombudsmanfile from "../Documents/Integrated-Ombudsman-Scheme-2021.pdf";
 import SilentOmbudsman from "../Documents/Salient-features_Integrated-Ombudsman-Scheme2021.pdf";
-
+ import cg from '../assets/img/corporate-governance.webp'
 
 
 const downloads = [
@@ -22,6 +22,11 @@ const Ombudsman = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
+    <>
+   
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Box sx={{ px: 2, py: 6 }}>
       <Box
         sx={{
@@ -67,6 +72,7 @@ const Ombudsman = () => {
         ))}
       </Box>
     </Box>
+    </>
   );
 };
 

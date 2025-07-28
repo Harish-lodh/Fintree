@@ -2,12 +2,18 @@ import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { useTheme } from '@mui/material/styles';
 import customereducation from "../Documents/Revised_SMA-on-Costumer-Education.pdf"
-
+   import cg from '../assets/img/corporate-governance.webp'
 const CustomerEducation = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
+    <>
+ 
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
+    
     <Box sx={{ px: 2, py: 6 }}>
       <Box
         sx={{
@@ -48,6 +54,7 @@ const CustomerEducation = () => {
         </Button>
       </Box>
     </Box>
+    </>
   );
 };
 

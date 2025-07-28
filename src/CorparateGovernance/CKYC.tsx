@@ -5,12 +5,17 @@ import { useTheme } from '@mui/material/styles';
 
 import video from "../video/CKYCvideoforReportingEntities.mp4";
 import ckybanner from "../assets/img/CKYC-Banner.jpg";
-
+import cg from '../assets/img/corporate-governance.webp'
 const CKYCSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
+    <>
+  <div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
+
     <Box sx={{ px: 2, py: 6 }}>
       <Box
         sx={{
@@ -86,6 +91,7 @@ const CKYCSection = () => {
         </Box>
       </Box>
     </Box>
+    </>
   );
 };
 

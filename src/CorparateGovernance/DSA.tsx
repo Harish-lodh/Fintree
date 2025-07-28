@@ -6,9 +6,14 @@ import {
 } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import DSA_file from "../Documents/DSA_CodeOfConduct.pdf"
-
+import cg from '../assets/img/corporate-governance.webp'
 const DSA = () => {
+
   return (
+      <>
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Box
         sx={{
@@ -41,6 +46,7 @@ const DSA = () => {
         </Button>
       </Box>
     </Container>
+    </>
   );
 };
 

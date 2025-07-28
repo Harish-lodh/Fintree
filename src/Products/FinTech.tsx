@@ -1,9 +1,14 @@
+import fintech from '../assets/product-img/FINTECH.jpg'
+
+
 const FinTechFinance = () => {
   return (
-    <div className="bg-gradient-to-r from-[#003341] to-[#005B82] py-12 px-6 md:px-24 text-white font-[Poppins]">
+    <div className="bg-gradient-to-r from-[#003341] to-[#005B82] py-8 px-6 md:px-24 text-white font-[Poppins]">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-
+   <div className="flex-1">
+        <img src={fintech} alt="fintech" className="w-full max-w-md mx-auto" />
+      </div>
         {/* Content Section */}
         <div className="flex-1 text-left">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Accelerating Digital Lending in India</h2>

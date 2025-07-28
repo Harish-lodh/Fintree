@@ -7,7 +7,7 @@ import pdf2 from '../Documents/FORM_MGT-7-FY_22-23.pdf'
 import pdf3 from '../Documents/FORM_MGT-7-FY_21-22.pdf'
 import pdf4 from '../Documents/FORM_MGT-7-FY_20-21.pdf'
 import pdf5 from '../Documents/FORM_MGT-7-FY_19-20.pdf';
-
+import cg from '../assets/img/corporate-governance.webp'
 const downloadLinks = [
   { label: "MGT-7 2023-24", url: pdf1 },
   { label: "MGT-7 2022-23", url: pdf2 },
@@ -18,6 +18,10 @@ const downloadLinks = [
 
 const MGTNotices = () => {
   return (
+    <>
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Stack spacing={3}>
         {downloadLinks.map((doc, index) => (
@@ -53,6 +57,7 @@ const MGTNotices = () => {
         ))}
       </Stack>
     </Container>
+    </>
   );
 };
 

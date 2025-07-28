@@ -11,7 +11,7 @@ import csr_committe from "../Documents/CSR-Committee.pdf";
 import csr_report_22 from "../Documents/CSR-Annexure-1.pdf"
 import csr_report_21 from "../Documents/CSR-report_2021.pdf"
 import csr_report_20 from "../Documents/CSR-report_2020.pdf"
-
+import cg from '../assets/img/corporate-governance.webp'
 const csrDocs = [
   { label: "CSR Policy", url: `${csrpolicy}`, buttonText: "View PDF" },
   { label: "Composition of CSR", url: `${csr_committe}`, buttonText: "View PDF" },
@@ -22,6 +22,10 @@ const csrDocs = [
 
 const Corporatesocialres = () => {
   return (
+    <>
+<div className='w-full mt-1'>
+  <img src={cg} className='h-80 object-cover w-full' />
+</div>
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Stack spacing={3}>
         {csrDocs.map((doc, index) => (
@@ -58,6 +62,7 @@ const Corporatesocialres = () => {
         ))}
       </Stack>
     </Container>
+    </>
   );
 };
 
