@@ -12,24 +12,47 @@ const Home = () => {
     const handleClick = () => {
     navigate("/Form"); // Change to your route
   };
+
+
+
+const goToPage = (path:string) => {
+  navigate(path);
+};
+
   return (
     <div className="min-h-screen w-full ">
 <div className="bg-stone-600 w-full p-2">
-  <div className="flex justify-end items-center space-x-4 mr-6">
-    <ul className="flex space-x-4">
-      <li className="text-white font-semibold hover:underline cursor-pointer">Supply chain</li>
-      <li className="text-white font-semibold hover:underline cursor-pointer">EV finance</li>
-      <li className="text-white font-semibold hover:underline cursor-pointer">LAP</li>
-    </ul>
-    <button
-      type="button"
-      onClick={handleClick}
-      className="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 my-1 focus:outline-none dark:focus:ring-blue-800"
+<div className="flex justify-end items-center space-x-4 mr-6">
+  <ul className="flex space-x-4">
+    <li 
+      className="text-white font-semibold hover:underline cursor-pointer"
+      onClick={() => goToPage('/products/supply-chain-finance')}
     >
+      Supply chain
+    </li>
+    <li 
+      className="text-white font-semibold hover:underline cursor-pointer"
+      onClick={() => goToPage('/products/fintech')}
+    >
+      FinTech
+    </li>
+    <li 
+      className="text-white font-semibold hover:underline cursor-pointer"
+      onClick={() => goToPage('/products/loan-against-property')}
+    >
+      LAP
+    </li>
+  </ul>
 
-      Apply Now
-    </button>
-  </div>
+  <button
+    type="button"
+    onClick={handleClick} 
+    className="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 my-1 focus:outline-none dark:focus:ring-blue-800"
+  >
+    Apply Now
+  </button>
+</div>
+
 </div>
 <div className="bg-blue-100 w-full overflow-hidden whitespace-nowrap marquee-wrapper">
       <p className="text-blue-800 font-semibold py-2 animate-marquee inline-block">
