@@ -65,7 +65,7 @@ const NachCancellationForm = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-8">
-             <h1 className="text-3xl font-extrabold bg-blue-200 inline-block px-2 py-1 text-gray-900">
+             <h1 className="text-3xl font-extrabold  inline-block px-2 py-1 text-gray-900">
   NACH CANCELLATION
 </h1>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
