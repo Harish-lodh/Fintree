@@ -6,36 +6,29 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 const FAQ = () => {
   const [openItems, setOpenItems] = useState<Record<string | number, boolean>>({ 1: true });
 
-  const faqData = [
-    {
-      id: 1,
-      question: "What financial services does Fintree Finance offer?",
-      answer: "Fintree Finance provides comprehensive financial planning, investment management, wealth advisory services, portfolio management, retirement planning, and tax optimization strategies. We focus on personalized solutions for individuals, families, and businesses."
-    },
-
-    {
-      id: 3,
-      question: "What is the minimum investment required to get started?",
-      answer: "We believe financial planning should be accessible to everyone. Our minimum investment starts at $10,000 for managed portfolios, with flexible payment options and scalable service tiers to accommodate different financial situations."
-    },
-
-    {
-      id: 5,
-      question: "What makes Fintree Finance trustworthy and secure?",
-      answer: "Fintree Finance is a SEC-registered investment advisor with comprehensive insurance coverage. We use bank-level security, segregated client accounts, and undergo regular third-party audits. Your assets are held with top-tier custodians for maximum protection."
-    },
-    {
-      id: 6,
-      question: "How often will I receive updates on my investments?",
-      answer: "You'll have 24/7 access to your portfolio through our secure client portal and mobile app. We provide quarterly performance reports, monthly market insights, and real-time notifications for significant portfolio changes or market events."
-    },
-    {
-      id: 7,
-      question: "Does Fintree Finance offer retirement planning services?",
-      answer: "Yes, retirement planning is one of our core specialties. We provide comprehensive 401(k) optimization, IRA management, pension planning, Social Security maximization strategies, and create detailed retirement income projections tailored to your lifestyle goals."
-    },
-
-  ];
+  const faqData =
+  [
+  {
+    "id": 1,
+    "question": "What financial services does Fintree Finance offer?",
+    "answer": "Fintree Finance offers a wide range of lending solutions to enterprises, SMEs (Small and Medium Enterprises), and individuals, with loan products spanning Supply Chain Financing, Loan Against Property, Education Loans, Personal Loans, Consumer Durable Financing, and EV Financing across India."
+  },
+  {
+    "id": 2,
+    "question": "What is the minimum loan amount?",
+    "answer": "The minimum loan amount offered by Fintree Finance depends on the specific loan product type."
+  },
+  {
+    "id": 3,
+    "question": "How do I get in touch with Fintree Finance Private Limited?",
+    "answer": "You can reach us through:\n\nHelpline:18002678111, 10:30 AM to 6:30 PM, Monday to Saturday (Closed on National Holidays)\nService Branches: 10:30 AM to 6:30 PM, Monday to Friday & Saturdays (1st, 3rd, and 4th Saturdays are working. Branch closed on Sundays and National Holidays)"
+  },
+  {
+    "id": 4,
+    "question": "Why should I opt for a loan from Fintree Finance Private Limited?",
+    "answer": "We offer:\n• Customised solutions and hassle-free financing\n• Complete transparency in charges and processes\n• Quick approvals and minimal processing/disbursement time\n• Choice between simple EMIs or structured repayment options"
+  }
+]
 
   const toggleItem = (id: any) => {
     setOpenItems((prev) => ({
