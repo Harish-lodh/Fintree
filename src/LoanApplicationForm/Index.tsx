@@ -149,10 +149,10 @@ const LoanApplicationForm = () => {
 
   const selectOptions = {
     loanType: [
-      { value: "LAP", label: "LAP" },
+      { value: "Loan Against Property", label: "Loan Against Property" },
       { value: "Supply Chain", label: "Supply Chain" },
       { value: "EV Financing", label: "EV Financing" },
-      { value: "Consumer Durable", label: "Consumer Durable" },
+      // { value: "Consumer Durable", label: "Consumer Durable" },
     ],
     constitution: [
       { value: "Proprietorship", label: "Proprietorship Firm" },
