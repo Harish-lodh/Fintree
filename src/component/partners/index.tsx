@@ -35,7 +35,7 @@ const Partners = () => {
     <div className="flex flex-col items-center my-10 mx-4 md:mx-16">
       {/* Co-lending Partners */}
       <div className='mb-6'>
-      <h2 className="text-blue-800 text-3xl font-bold mb-8 text-center">Bussiness & Co-lending Partners</h2>
+      <h2 className="text-blue-800 text-3xl font-bold mb-8 text-center">BC & Co-lending Partners</h2>
       <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
         <img src={muthood} alt="Muthoot" className="h-20 object-contain" />
         <img src={nfcpl} alt="NFCPL" className="h-20 w-20 object-contain" />
