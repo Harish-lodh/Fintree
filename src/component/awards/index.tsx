@@ -1,10 +1,10 @@
 
-import img1 from "../../assets/img/award.png"
-import img2 from '../../assets/img/award1.jpg'
+import img1 from "../../assets/img/award1.jpg"
+import img2 from '../../assets/img/award2.jpg'
 import img3 from '../../assets/img/award3.jpg'
 import img4 from '../../assets/img/award-2019.jpg'
 import img5 from '../../assets/img/award5.jpg'
-import img6 from '../../assets/img/award6.jpg'
+import img6 from '../../assets/img/award.png'
 
 
 const Awards = () => {

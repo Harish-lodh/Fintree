@@ -49,7 +49,8 @@ const lspData = [
     name: "Grayquest Education Finance Pvt. Ltd.",
     appName: "",
     product: "Finance education fees",
-    website: "",
+    website:"Grayquest",
+    websiteUrl: "https://www.grayquest.com/",
   },
   {
     sno: "07",
@@ -63,35 +64,40 @@ const lspData = [
     name: "Narendra Finance Company Private Limited",
     appName: "Adikosh",
     product: "Personal Loan",
-    website: "",
+    website:"nfcpl",
+    websiteUrl: "https://nfcpl.in/",
   },
   {
     sno: "09",
     name: "Circle Pe Private Limited",
     appName: "Circel Pe",
     product: "Zero security deposit",
-    website: "",
+    website:"CirclePe",
+    websiteUrl: "https://circlepe.club/",
   },
   {
     sno: "10",
     name: "Embifi Global Services Private Limited",
     appName: "",
     product: "E rickshaw financing",
-    website: "",
+    website:"Embifi",
+    websiteUrl: "https://www.embifi.in/",
   },
   {
     sno: "11",
     name: "Mash Technologies Private Limited",
     appName: "Emi club",
     product: "Consumer durables",
-    website: "",
+    website:"Theemiclub",
+    websiteUrl: "https://theemiclub.com/",
   },
   {
     sno: "12",
     name: "Fundfina Marketplace Pvt Ltd",
     appName: "",
     product: "Merchant Brisk- Short term loans",
-    website: "",
+    website:"Fundfina",
+    websiteUrl: "https://www.fundfina.com/",
   },
   {
     sno: "13",
@@ -253,7 +259,7 @@ const LSPTable = () => {
                       <LaunchIcon className="ml-1" style={{ fontSize: "16px" }} />
                     </a>
                   ) : (
-                    <span className="text-gray-400">{item.website || "N/A"}</span>
+                    <span className="text-gray-400">{item.website || ""}</span>
                   )}
                 </td>
               </tr>

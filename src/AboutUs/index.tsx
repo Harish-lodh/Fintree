@@ -8,37 +8,37 @@ const team = [
   {
     name: "Lalit Shah",
     title: "Managing Director & Founder",
-    image: lalit, // Replace with actual path
+    image: lalit,
     description:
-      "With deep business acumen and strategic vision, Lalit Shah has steered Fintree's growth. He's known for efficient fundraising and identifying optimal deployment opportunities at competitive rates.",
+      "With his deep business acumen and strategic vision, he has been instrumental in steering the company's growth and long-term objectives.His expertise lies in efficiently raising resources at highly competitive rates, even on short notice. A seasoned veteran, he excels in identifying and creating opportunities for optimal resource deployment at attractive terms.",
   },
   {
     name: "Rajesh Dubey",
     title: "Director & CEO",
     image: rajesh,
     description:
-      "A CA and Cost Accountant with 30+ years in Credit & Risk, Rajesh pioneered India's first SME rating agency and developed credit risk tools used across Asia. He helped launch CGTMSE, enabling collateral-free loans to MSMEs.",
+      "A Chartered Accountant and Cost Accountant with over three decades of expertise in Credit & Risk Management, he has played a pivotal role in shaping the SME lending landscape. He was instrumental in conceptualizing and establishing the first-ever rating agency for SMEs, successfully leading the company through its initial three years of operations.\n\nHis contributions extend to the setup and operationalization of CGFTMSE, a credit guarantee organization designed to facilitate collateral-free credit access for the micro and small business sector.He has also developed advanced rating models for assessing credit risk in SME lending, benefiting banks across the SAARC and Southeast Asian regions. Additionally, he pioneered an early warning signal tool that leverages transaction behavior in checking accounts to identify potential risks for small and mid-sized businesses.",
   },
   {
     name: "Sandeep Chhowala",
     title: "Chief Financial Officer (CFO)",
     image: sandeep,
     description:
-      "A finance expert with 15+ years across NBFCs and real estate, Sandeep specializes in fundraising, treasury, investor relations, and financial controls. He also oversees HR and compliance operations.",
+      "A Chartered Accountant and seasoned finance professional with over 15 years of diverse experience, he has played a key role in strengthening companies across various industries, including NBFCs and real estate. Before joining Fintree Finance, he contributed to the success of organizations such as Capri Global Capital Limited, The Phoenix Mills Limited, Ogilvy & Mather Private Limited, and Everest Developers.\n\nHis expertise spans fund raising, structuring financial deals tailored to organizational needs, corporate treasury management, and investor relations.Additionally, he has a strong command over planning & budgeting, accounting, taxation, auditing, compliance management, and financial & operational controls. Beyond finance, he also oversees the HR function, ensuring seamless organizational growth and efficiency.",
   },
   {
     name: "Vinod Singh",
     title: "Vice President, IT",
     image: vinod,
     description:
-      "Vinod has 18+ years of experience in IT project management and implementation of core lending systems like FinnOne across major Indian banks and NBFCs. He ensures technology-driven operational excellence.",
+      "A dynamic IT professional with over 18 years of experience in IT applications, business requirement gathering, continuity planning, project management, and technology implementation. Adept at project planning, budgeting, business function analysis, change management, UAT, and end-user training.\n\nHe has led the implementation, training, and support of the Core Lending Solution (FinnOne) at Fedbank Financial Services for Loan Against Property (LAP), Gold Loans, and Personal Loans.His expertise extends to core banking solution implementations for leading financial institutions, including Bank of India, Bank of Baroda, Federal Bank, UCO Bank, Centurion Bank of Punjab, and Kotak Mahindra Bank. As a senior member of the IT team at Fedbank, he played a key role in overseeing IT initiatives and ensuring seamless operations.",
   },
   {
     name: "Nasir Sayed",
     title: "Chief Business Officer (CBO)",
     image: nasir,
     description:
-      "With 25+ years in SME, mortgage, and business lending, Nasir held leadership roles in Standard Chartered and more. He co-founded a P2P lending startup and managed secured lending strategies at Ambit Finvest.",
+      "A seasoned banking professional with over 25 years of experience in general management, business strategy, and risk management. He has held leadership roles across consumer lending, SME lending, mortgage loans, and personal/secured business loans in major foreign banks and financial institutions, including Standard Chartered, Development Credit Bank, and Union National Bank (UAE).\n\nHe was a founding member and EVP at Ambit Finvest (formerly Volition Credit & Holdings), where he focused on affordable and prime secured lending.As the Co-Founder and Chief Business Officer of a peer-to-peer lending startup, he managed LAP portfolios under BC arrangements and led collections from stressed assets.",
   },
 ];
 
@@ -52,7 +52,7 @@ const About = () => {
         <span className="font-semibold text-indigo-700">Fintree Finance</span> has
         become a trusted partner for{" "}
         <strong>
-          Enterprises, SMEs, Personal, Consumer Durable, and EV Financing
+          Enterprises, SMEs, Personal, Education Loan, and EV Financing
         </strong>{" "}
         across India.
       </p>
@@ -79,10 +79,9 @@ const About = () => {
           <strong>Supply Chain Financing:</strong> Supporting businesses with working
           capital needs.
         </li>
-
-        <li>
-          <strong>Consumer Durable Loans:</strong> Easy financing for daily essentials.
-        </li>
+    <li>
+  <strong>Education Loan:</strong> Enabling students to access quality education by financing tuition fees, living expenses, and other academic costs.
+</li>
 
         <li>
           <strong>EV Finance:</strong> Driving green mobility with electric vehicle
@@ -108,7 +107,7 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold text-indigo-700">{member.name}</h3>
               <p className="text-sm font-semibold text-gray-600 mb-2">{member.title}</p>
-              <p className="text-gray-700">{member.description}</p>
+              <p className="text-gray-700 whitespace-pre-line">{member.description}</p>
             </div>
           </div>
         ))}

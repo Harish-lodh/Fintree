@@ -1,6 +1,11 @@
 import muthood from '../../assets/lending/mothoot_logo.webp'
 import nfcpl from '../../assets/lending/NFCPL.png'
 import mdai from '../../assets/lending/SDAl.jpg'
+import kite from '../../assets/lending/kite.jpeg'
+import ambit from '../../assets/lending/Ambit logo.jpg'
+
+import chola from '../../assets/lending/chola_logo.svg'
+
 import circle from '../../assets/lending/circlepe-club-logo.png'
 import gray from '../../assets/lending/grayquest-logo-300x144.png'
 import malhotra from '../../assets/lending/malhotra.png'
@@ -30,11 +35,13 @@ const Partners = () => {
     <div className="flex flex-col items-center my-10 mx-4 md:mx-16">
       {/* Co-lending Partners */}
       <div className='mb-6'>
-      <h2 className="text-blue-800 text-3xl font-bold my-6 text-center">Co-lending Partners</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+      <h2 className="text-blue-800 text-3xl font-bold mb-8 text-center">Bussiness & Co-lending Partners</h2>
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
         <img src={muthood} alt="Muthoot" className="h-20 object-contain" />
         <img src={nfcpl} alt="NFCPL" className="h-20 w-20 object-contain" />
-        <img src={mdai} alt="MDAI" className="h-20 object-contain" />
+        <img src={kite} alt="MDAI" className="h-20 object-contain" />
+        <img src={chola} alt="chola" className="h-20 object-contain" />
+        <img src={ambit} alt="ambit" className="h-20 object-contain" />
       </div>
 </div>
       {/* Service Partners */}

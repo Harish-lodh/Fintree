@@ -28,11 +28,11 @@ const LAP = () => {
         <ul className="mb-6 space-y-2">
           <li className="flex items-center">
             <span className="text-green-400 text-lg mr-2">✅</span> 
-            <span><span className="font-bold">Loan Range:</span> ₹5 lakhs to ₹25 lakhs</span>
+            <span><span className="font-bold">Loan Range:</span> ₹2 lakhs to ₹50 lakhs</span>
           </li>
           <li className="flex items-center">
             <span className="text-green-400 text-lg mr-2">✅</span> 
-            <span><span className="font-bold">Tenure:</span> 8 to 10 years</span>
+            <span><span className="font-bold">Tenure:</span> 3 to 15 years</span>
           </li>
           <li className="flex items-center">
             <span className="text-green-400 text-lg mr-2">✅</span> 

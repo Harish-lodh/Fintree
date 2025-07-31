@@ -45,9 +45,9 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen  my-14 to-purple-50">
+    <div className="min-h-screen  my-5 to-purple-50">
       {/* Hero Section */}
-       <h1 className="text-3xl font-bold text-center text-blue-800">
+       <h1 className="text-3xl font-bold my-2 text-center text-blue-800">
         Frequently Asked Questions
       </h1>
 

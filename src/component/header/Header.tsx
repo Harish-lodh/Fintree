@@ -12,6 +12,7 @@ const Header = () => {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const navigate = useNavigate();
   const [isselected, setIsselected] = useState("home");
+  const [mobileSubMenu, setMobileSubMenu] = useState<string | null>(null); // New state for mobile sub-menu
 
   const productLinks = [
     {
@@ -29,11 +30,11 @@ const Header = () => {
       route: "products/fintech",
       description: "Digital financial solutions",
     },
-    {
-      name: "NACH Cancellation",
-      route: "products/nach-cancellation",
-      description: "Cancel your NACH mandates easily",
-    },
+    // {
+    //   name: "NACH Cancellation",
+    //   route: "products/nach-cancellation",
+    //   description: "Cancel your NACH mandates easily",
+    // },
   ];
 
   const corpGovLinks = [
@@ -53,8 +54,12 @@ const Header = () => {
   const handleNav = (route: string, selected?: string) => {
     navigate(route);
     setHoveredMenu(null);
+    setMobileSubMenu(null);
     if (selected) setIsselected(selected);
     setMenuOpen(false); // also closes mobile menu
+  };
+  const toggleSubMenu = (menu: string) => {
+    setMobileSubMenu(mobileSubMenu === menu ? null : menu); // Toggle sub-menu
   };
 
   return (
@@ -195,7 +200,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
+      {/* {menuOpen && (
         <>
           <div
             className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -241,16 +246,110 @@ const Header = () => {
                 </button>
               </nav>
 
-              <div className="relative mb-6">
-                <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">
-                  <SearchIcon className="w-5 h-5" />
-                </span>
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-10 pr-4 py-3 w-full text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
-                />
+              <div className="flex items-center gap-3 text-gray-700 bg-green-50 p-3 rounded-lg">
+                <CallIcon className="text-green-600" />
+                <span className="font-semibold">1800 267 8111</span>
               </div>
+            </div>
+          </div>
+        </>
+      )} */}
+      {menuOpen && (
+        <>
+          <div
+            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setMenuOpen(false)}
+          ></div>
+
+          <div className="lg:hidden fixed top-0 left-0 w-3/4 max-w-sm h-full bg-white shadow-2xl z-50 transform transition-transform duration-300">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-8">
+                <img src={logo} alt="logo" className="w-32 h-auto object-contain" />
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="text-gray-700 hover:text-gray-900 p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                >
+                  <CloseIcon />
+                </button>
+              </div>
+
+              <nav className="space-y-4 mb-8">
+                <button
+                  onClick={() => handleNav("/", "home")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  Home
+                </button>
+
+                {/* Products Sub-Menu */}
+                <div>
+                  <button
+                    onClick={() => toggleSubMenu("product")}
+                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                  >
+                    Products
+                    <ChevronDownIcon
+                      className={`transition-transform duration-200 ${
+                        mobileSubMenu === "product" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {mobileSubMenu === "product" && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {productLinks.map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={() => handleNav(link.route, "product")}
+                          className="block text-left w-full text-sm font-medium text-gray-700 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Corporate Governance Sub-Menu */}
+                <div>
+                  <button
+                    onClick={() => toggleSubMenu("corporate")}
+                    className="flex items-center justify-between w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                  >
+                    Corporate Governance
+                    <ChevronDownIcon
+                      className={`transition-transform duration-200 ${
+                        mobileSubMenu === "corporate" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {mobileSubMenu === "corporate" && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {corpGovLinks.map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={() => handleNav(link.route, "corporate")}
+                          className="block text-left w-full text-sm font-medium text-gray-700 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <button
+                  onClick={() => handleNav("/Lending-Service-Provider", "lsp")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  Lending Service Provider
+                </button>
+                <button
+                  onClick={() => handleNav("/about-us", "about")}
+                  className="block text-left w-full text-lg font-medium text-gray-800 hover:text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-50"
+                >
+                  About
+                </button>
+              </nav>
 
               <div className="flex items-center gap-3 text-gray-700 bg-green-50 p-3 rounded-lg">
                 <CallIcon className="text-green-600" />

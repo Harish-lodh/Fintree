@@ -12,8 +12,10 @@ const services = [
     description: "Finance secured against residential or commercial property.",
   },
   {
-    title: "Consumer Durable Loans",
-    description: "Financing for electronics and appliances purchases.",
+    title: "Education Loan",
+    description: "Enabling students to access quality education by financing tuition fees, living expenses, and other academic costs",
+ 
+
   },
 
   {

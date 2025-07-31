@@ -19,14 +19,7 @@ const FinTechFinance = () => {
           </p>
 
           <ul className="mb-6 space-y-3">
-            <li className="flex items-start">
-              <span className="text-green-400 text-lg mr-2">•</span>
-              <span><span className="font-semibold">Buy Now Pay Later (BNPL)</span></span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-green-400 text-lg mr-2">•</span>
-              <span><span className="font-semibold">Express Small Business Loans</span></span>
-            </li>
+       
             <li className="flex items-start">
               <span className="text-green-400 text-lg mr-2">•</span>
               <span><span className="font-semibold">Education Loans to K-12 and few technical courses</span></span>
@@ -34,10 +27,6 @@ const FinTechFinance = () => {
             <li className="flex items-start">
               <span className="text-green-400 text-lg mr-2">•</span>
               <span><span className="font-semibold">Financing of Medical Expenses</span></span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-green-400 text-lg mr-2">•</span>
-              <span><span className="font-semibold">Consumer Durables Loans</span></span>
             </li>
             <li className="flex items-start">
               <span className="text-green-400 text-lg mr-2">•</span>

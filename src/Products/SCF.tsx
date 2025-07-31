@@ -6,7 +6,7 @@ import scfimg from '../assets/product-img/SUPPLY-CHAIN-FINANCING.jpg'
 const SCF = () => {
   return(
     <>
-       <div className="bg-gradient-to-r from-[#003341] to-[#005B82] py-12 px-6 md:px-24 text-white font-[Poppins]">
+       <div className="bg-gradient-to-r from-[#003341] to-[#005B82] py-12 px-6 md:px-24 text-white ">
 
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
   <div className="flex-1">
@@ -17,7 +17,7 @@ const SCF = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Empowering Dealers & Distributors</h2>
 
           <p className="mb-4 leading-relaxed">
-            Fintree Finance is a pioneer in <span className="font-semibold">unsecured Supply Chain Financing</span>, 
+            Fintree Finance is a pioneer in <span className="font-semibold">Unsecured Supply Chain Financing</span>, 
             in the <span className="font-semibold">Stainless Steel Market</span>. With deep domain knowledge and a robust underwriting engine, 
             we offer <span className="font-semibold">purchase invoice discounting</span> revolving facility on-demand, 
             ranging from <span className="font-semibold">₹20 lakhs to ₹3 crores</span>, ensuring businesses never face working capital shortages.
@@ -45,7 +45,7 @@ const SCF = () => {
           </p>
 
           <p className="leading-relaxed">
-            With strategic alliances with reputed institutions like <span className="font-semibold">Muthoot, Chola and Ambit</span>, 
+            With strategic alliances with reputed institutions like <span className="font-semibold">Muthoot, Cholamandalam,Kite finance and Ambit</span>, 
             we cater to a <span className="font-semibold">₹5000 Cr underserved market</span>. Our model offers 
             <span className="font-semibold"> end-to-end visibility</span>, near-zero delinquency, and 
             <span className="font-semibold"> steady income cycles</span>—making it ideal for growth-focused suppliers and distributors.

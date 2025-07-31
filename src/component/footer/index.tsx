@@ -7,12 +7,19 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import logo from '../../assets/nav-logo.jpeg'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Footer = () => {
-  const scrollToTop = () => {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, [pathname]);
+
+  return null;
+};
 
 const socialIcons = [
   { 
@@ -106,6 +113,7 @@ const otherLinks = [
       <li key={index}>
         <Link
           to={link.path}
+          onClick={ScrollToTop}
           className="
             text-gray-400 hover:text-white text-sm 
             transition-all duration-300 ease-out 
@@ -130,6 +138,7 @@ const otherLinks = [
       <li key={index}>
         <Link
           to={link.path}
+           onClick={ScrollToTop}
           className="
             text-gray-400 hover:text-white text-sm 
             transition-all duration-300 ease-out 
@@ -220,7 +229,7 @@ const otherLinks = [
 
       {/* Material Design Floating Action Button */}
       <button
-        onClick={scrollToTop}
+       onClick={ScrollToTop}
         className="
           fixed bottom-6 right-6 w-10 h-10 
           bg-blue-800 hover:bg-blue-700 active:bg-blue-800
