@@ -7,7 +7,7 @@ import LoanApplicationForm from './LoanApplicationForm/Index.tsx'
 import LAP from './Products/LAP.tsx';
 import FinTechFinance from './Products/FinTech.tsx';
 import Footer from './component/footer/index.tsx';
-import NachCancellationForm from './Products/NachCancellation.tsx';
+// import NachCancellationForm from './Products/NachCancellation.tsx';
 import SCF from './Products/SCF.tsx';
 import About from './AboutUs/index.tsx';
 import ResignationOfDirector from './CorparateGovernance/ResignationOfDirector.tsx';
@@ -37,7 +37,7 @@ export default function App() {
                         <Route path="/Form" element={<LoanApplicationForm />} />
                         <Route path="/products/loan-against-property" element={< LAP />} />
                         <Route path="/products/fintech" element={< FinTechFinance />} />
-                        <Route path="/products/nach-cancellation" element={< NachCancellationForm />} />
+                        {/* <Route path="/products/nach-cancellation" element={< NachCancellationForm />} /> */}
                         <Route path="/products/supply-chain-finance" element={< SCF />} />
 
 

@@ -1,10 +1,16 @@
-// src/components/ServiceCard.jsx
-// any is changed to never. 
-const ServiceCard = ({ title, description }:never) => {
+// src/components/services/ServiceCard.tsx
+import React from "react";
+
+interface ServiceCardProps {
+  title: string;
+  description: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-2 hover:shadow-lg transition">
+    <div className="p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300">
       <h3 className="text-xl font-semibold text-blue-800 mb-2">{title}</h3>
-      <p className="text-gray-600 text-lg">{description}</p>
+      <p className="text-gray-600">{description}</p>
     </div>
   );
 };

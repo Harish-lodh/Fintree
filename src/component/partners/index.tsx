@@ -1,6 +1,5 @@
 import muthood from '../../assets/lending/mothoot_logo.webp'
 import nfcpl from '../../assets/lending/NFCPL.png'
-import mdai from '../../assets/lending/SDAl.jpg'
 import kite from '../../assets/lending/kite.jpeg'
 import ambit from '../../assets/lending/Ambit logo.jpg'
 

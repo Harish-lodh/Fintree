@@ -1,69 +1,69 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+// import { useState, type ChangeEvent, type FormEvent } from "react";
 
-interface FormData {
-  name: string;
-  email: string;
-  bankName: string;
-  micr: string;
-  lan: string;
-  mobile: string;
-  bankAccount: string;
-  nachName: string;
-  captchaChecked: boolean;
-}
+// interface FormData {
+//   name: string;
+//   email: string;
+//   bankName: string;
+//   micr: string;
+//   lan: string;
+//   mobile: string;
+//   bankAccount: string;
+//   nachName: string;
+//   captchaChecked: boolean;
+// }
 
-interface FormErrors {
-  [key: string]: string;
-}
+// interface FormErrors {
+//   [key: string]: string;
+// }
 
-const NachCancellationForm = () => {
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    bankName: "",
-    micr: "",
-    lan: "",
-    mobile: "",
-    bankAccount: "",
-    nachName: "",
-    captchaChecked: false,
-  });
+// const NachCancellationForm = () => {
+//   const [form, setForm] = useState<FormData>({
+//     name: "",
+//     email: "",
+//     bankName: "",
+//     micr: "",
+//     lan: "",
+//     mobile: "",
+//     bankAccount: "",
+//     nachName: "",
+//     captchaChecked: false,
+//   });
 
-  const [errors, setErrors] = useState<FormErrors>({});
+//   const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement>
-  ) => {
-    const { name, value, type, checked } = e.target;
-    setForm({
-      ...form,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+//   const handleChange = (
+//     e: ChangeEvent<HTMLInputElement>
+//   ) => {
+//     const { name, value, type, checked } = e.target;
+//     setForm({
+//       ...form,
+//       [name]: type === "checkbox" ? checked : value,
+//     });
+//   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const newErrors: FormErrors = {};
+//   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     const newErrors: FormErrors = {};
 
-    Object.entries(form).forEach(([key, value]) => {
-      if (key !== "captchaChecked" && !value) {
-        newErrors[key] = `${key} cannot be blank.`;
-      }
-    });
+//     Object.entries(form).forEach(([key, value]) => {
+//       if (key !== "captchaChecked" && !value) {
+//         newErrors[key] = `${key} cannot be blank.`;
+//       }
+//     });
 
-    if (!form.captchaChecked) {
-      newErrors["captcha"] = "The captcha is missing from this form.";
-    }
+//     if (!form.captchaChecked) {
+//       newErrors["captcha"] = "The captcha is missing from this form.";
+//     }
 
-    setErrors(newErrors);
+//     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      alert("Form submitted successfully!");
-      // Handle API call here
-    }
-  };
+//     if (Object.keys(newErrors).length === 0) {
+//       alert("Form submitted successfully!");
+//       // Handle API call here
+//     }
+//   };
 
-  return (
+//   return (
 //     <div className="max-w-4xl mx-auto p-8">
 //              <h1 className="text-3xl font-extrabold  inline-block px-2 py-1 text-gray-900">
 //   NACH CANCELLATION
@@ -243,8 +243,8 @@ const NachCancellationForm = () => {
 
 //       </form>
 //     </div>
-<></>
-  );
-};
 
-export default NachCancellationForm;
+//   );
+// };
+
+// export default NachCancellationForm;
