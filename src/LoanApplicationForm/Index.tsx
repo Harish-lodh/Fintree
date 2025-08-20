@@ -14,7 +14,7 @@ interface FormData {
   state: string;
   loanAmount: string;
   constitution: string;
- 
+
   businessYears: string;
   gstRegistered: string;
   gstin: string;
@@ -56,13 +56,16 @@ const LoanApplicationForm = () => {
     state: "",
     loanAmount: "",
     constitution: "",
-   
+
     businessYears: "",
     gstRegistered: "",
     gstin: "",
   });
 
   const [errors, setErrors] = useState<ErrorData>({});
+  const [isRedirect, setIsRedirect] = useState(Boolean);
+
+const redirectUrl='https://fintreelms.testzypay.com/login';
 
   const validateField = (name: keyof FormData, value: string): true | string => {
     const today = new Date();
@@ -90,7 +93,7 @@ const LoanApplicationForm = () => {
         "Mobile must be a 10-digit number starting with 6, 7, 8, or 9.",
       email: () =>
         /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value) || "Invalid email address.",
-      pincode: () =>  !value ||/^\d{6}$/.test(value) || "Pincode must be a 6-digit number.",
+      pincode: () => !value || /^\d{6}$/.test(value) || "Pincode must be a 6-digit number.",
       city: () =>
         /^[a-zA-Z\s]{2,50}$/.test(value) ||
         "City must be 2-50 characters, letters and spaces only.",
@@ -116,7 +119,11 @@ const LoanApplicationForm = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-
+    if (name === 'loanType' && value === 'EV Financing') {
+      setIsRedirect(true); // Set the redirect state when EV Financing is selected
+    }else{
+      setIsRedirect(false)
+    }
     const error = validateField(name as keyof FormData, value);
     setErrors({ ...errors, [name]: error === true ? "" : error });
   };
@@ -125,7 +132,7 @@ const LoanApplicationForm = () => {
     e.preventDefault();
     const newErrors: ErrorData = {};
     let isValid = true;
-
+  
     Object.keys(form).forEach((key) => {
       const error = validateField(key as keyof FormData, form[key as keyof FormData]);
       newErrors[key] = error === true ? "" : error;
@@ -180,131 +187,175 @@ const LoanApplicationForm = () => {
     />
   );
 
-  return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      <div className="w-full max-w-xl mr-10 my-3 p-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
-        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Type of Loan <span className="text-red-600">*</span></label>
-            {renderSelect("loanType", selectOptions.loanType)}
-            {errors.loanType && <p className="text-red-500 text-sm">{errors.loanType}</p>}
-          </div>
+return (
+  <div
+    className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end"
+    style={{ backgroundImage: `url(${bg})` }}
+  >
+    <div className="w-full max-w-xl mr-10 my-3 p-6 bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-lg">
+      <h2 className="text-2xl font-bold text-center text-blue-700">Loan Application Form</h2>
+      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+        <div>
+          <label className="block font-medium mb-1 text-gray-700">
+            Type of Loan <span className="text-red-600">*</span>
+          </label>
+          {renderSelect("loanType", selectOptions.loanType)}
+          {errors.loanType && <p className="text-red-500 text-sm">{errors.loanType}</p>}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { id: "name", type: "text", label: "Name" },
-              { id: "mobile", type: "tel", label: "Mobile", maxLength: 10 },
-              { id: "email", type: "email", label: "Email" },
-              { id: "dob", type: "date", label: "Date of Birth", max: new Date().toISOString().split("T")[0] },
-            ].map(({ id, type, label, ...rest }) => (
-              <div key={id}>
-                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">{label} <span className="text-red-600">*</span></label>
-                <input
-                  id={id}
-                  type={type}
-                  name={id}
-                  value={(form as any)[id]}
-                  onChange={handleChange}
-                  className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
-                  required
-                  aria-invalid={!!errors[id]}
-                  {...rest}
-                />
-                {errors[id] && <p className="text-red-500 text-sm">{errors[id]}</p>}
-              </div>
-            ))}
-          </div>
+          {/* Show message if isRedirect is true */}
+          {isRedirect && (
+            <p className="text-blue-600 text-sm mt-2">
+              You will be redirected to another page to complete the application process.
+            </p>
+          )}
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {["pincode", "city", "state"].map((id) => (
-              <div key={id}>
-                <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
-                  {id !== "pincode" && <span className="text-red-600"> *</span>}
-                </label>                <input
-                  id={id}
-                  type="text"
-                  name={id}
-                  value={(form as any)[id]}
-                  onChange={handleChange}
-                  className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
-                  required
-                  aria-invalid={!!errors[id]}
-                />
-                {errors[id] && <p className="text-red-500 text-sm">{errors[id]}</p>}
-              </div>
-            ))}
-          </div>
+        {/* Conditionally render all form fields when isRedirect is false */}
+        {!isRedirect && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { id: "name", type: "text", label: "Name" },
+                { id: "mobile", type: "tel", label: "Mobile", maxLength: 10 },
+                { id: "email", type: "email", label: "Email" },
+                {
+                  id: "dob",
+                  type: "date",
+                  label: "Date of Birth",
+                  max: new Date().toISOString().split("T")[0],
+                },
+              ].map(({ id, type, label, ...rest }) => (
+                <div key={id}>
+                  <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
+                    {label} <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    id={id}
+                    type={type}
+                    name={id}
+                    value={(form as any)[id]}
+                    onChange={handleChange}
+                    className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
+                    required
+                    aria-invalid={!!errors[id]}
+                    {...rest}
+                  />
+                  {errors[id] && <p className="text-red-500 text-sm">{errors[id]}</p>}
+                </div>
+              ))}
+            </div>
 
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Loan Amount <span className="text-red-600">*</span></label>
-            <input
-              type="number"
-              name="loanAmount"
-              value={form.loanAmount}
-              onChange={handleChange}
-              className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
-              required
-            />
-            {errors.loanAmount && <p className="text-red-500 text-sm">{errors.loanAmount}</p>}
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4
 
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Constitution Type <span className="text-red-600">*</span></label>
-            {renderSelect("constitution", selectOptions.constitution)}
-            {errors.constitution && <p className="text-red-500 text-sm">{errors.constitution}</p>}
-          </div>
+">
+              {["pincode", "city", "state"].map((id) => (
+                <div key={id}>
+                  <label htmlFor={id} className="block font-medium mb-1 text-gray-700">
+                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                    {id !== "pincode" && <span className="text-red-600"> *</span>}
+                  </label>
+                  <input
+                    id={id}
+                    type="text"
+                    name={id}
+                    value={(form as any)[id]}
+                    onChange={handleChange}
+                    className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
+                    required
+                    aria-invalid={!!errors[id]}
+                  />
+                  {errors[id] && <p className="text-red-500 text-sm">{errors[id]}</p>}
+                </div>
+              ))}
+            </div>
 
-  
-
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Years in Business</label>
-            <input
-              type="number"
-              name="businessYears"
-              value={form.businessYears}
-              onChange={handleChange}
-              className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
-              required
-            />
-            {errors.businessYears && <p className="text-red-500 text-sm">{errors.businessYears}</p>}
-          </div>
-
-          <div>
-            <label className="block font-medium mb-1 text-gray-700">Registered on GST Portal? <span className="text-red-600">*</span></label>
-            {renderSelect("gstRegistered", selectOptions.gstRegistered)}
-            {errors.gstRegistered && <p className="text-red-500 text-sm">{errors.gstRegistered}</p>}
-          </div>
-
-          {form.gstRegistered === "Yes" && (
             <div>
-              <label className="block font-medium mb-1 text-gray-700">GSTIN</label>
+              <label className="block font-medium mb-1 text-gray-700">
+                Loan Amount <span className="text-red-600">*</span>
+              </label>
               <input
-                type="text"
-                name="gstin"
-                value={form.gstin}
+                type="number"
+                name="loanAmount"
+                value={form.loanAmount}
                 onChange={handleChange}
                 className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
                 required
               />
-              {errors.gstin && <p className="text-red-500 text-sm">{errors.gstin}</p>}
+              {errors.loanAmount && <p className="text-red-500 text-sm">{errors.loanAmount}</p>}
             </div>
-          )}
 
-          <button
-            type="submit"
-            className="w-full bg-green-500 text-white font-semibold py-2 rounded hover:bg-green-600 transition"
-          >
-            Submit Application
-          </button>
-        </form>
-      </div>
+            <div>
+              <label className="block font-medium mb-1 text-gray-700">
+                Constitution Type <span className="text-red-600">*</span>
+              </label>
+              {renderSelect("constitution", selectOptions.constitution)}
+              {errors.constitution && <p className="text-red-500 text-sm">{errors.constitution}</p>}
+            </div>
+
+            <div>
+              <label className="block font-medium mb-1 text-gray-700">Years in Business</label>
+              <input
+                type="number"
+                name="businessYears"
+                value={form.businessYears}
+                onChange={handleChange}
+                className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
+                required
+              />
+              {errors.businessYears && <p className="text-red-500 text-sm">{errors.businessYears}</p>}
+            </div>
+
+            <div>
+              <label className="block font-medium mb-1 text-gray-700">
+                Registered on GST Portal? <span className="text-red-600">*</span>
+              </label>
+              {renderSelect("gstRegistered", selectOptions.gstRegistered)}
+              {errors.gstRegistered && <p className="text-red-500 text-sm">{errors.gstRegistered}</p>}
+            </div>
+
+            {form.gstRegistered === "Yes" && (
+              <div>
+                <label className="block font-medium mb-1 text-gray-700">GSTIN</label>
+                <input
+                  type="text"
+                  name="gstin"
+                  value={form.gstin}
+                  onChange={handleChange}
+                  className="w-full border border-black/30 text-gray-700 rounded px-3 py-2 focus:border-blue-800 focus:outline-none"
+                  required
+                />
+                {errors.gstin && <p className="text-red-500 text-sm">{errors.gstin}</p>}
+              </div>
+            )}
+          </>
+        )}
+
+        <button
+          type="submit"
+          className="w-full bg-green-500 text-white font-semibold py-1 rounded hover:bg-green-600 transition"
+        >
+         {isRedirect ? (
+            <a
+              href={redirectUrl}
+              className="w-full bg-green-500 text-white font-semibold py-1 rounded hover:bg-green-600 transition text-center block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to Website
+            </a>
+          ) : (
+            <button
+              type="submit"
+              className="w-full bg-green-500 text-white font-semibold py-2 rounded hover:bg-green-600 transition"
+            >
+              Submit Application
+            </button>
+          )}
+        </button>
+      </form>
     </div>
-  );
+  </div>
+);
 };
 
 export default LoanApplicationForm;

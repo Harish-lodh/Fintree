@@ -1,7 +1,7 @@
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+// import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -228,7 +228,7 @@ const otherLinks = [
       </div>
 
       {/* Material Design Floating Action Button */}
-      <button
+      {/* <button
        onClick={ScrollToTop}
         className="
           fixed bottom-6 right-6 w-10 h-10 
@@ -243,7 +243,7 @@ const otherLinks = [
         aria-label="Back to top"
       >
         <KeyboardArrowUpIcon className="w-6 h-6  group-hover:animate-bounce" />
-      </button>
+      </button> */}
     </footer>
   );
 };

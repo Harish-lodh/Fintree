@@ -87,7 +87,7 @@ const goToPage = (path:string) => {
               Mumbai & Delhi, Fintree provides short-tenure loans to merchants
               based on the digital payments that happen at their outlets.
             </p>
-            <p className="mt-4 text-blue-800 font-medium cursor-pointer hover:underline">
+            <p className="mt-4 text-blue-800 font-medium cursor-pointer hover:underline" onClick={()=>goToPage('/about-us')}>
               Read More...
             </p>
           </div>
