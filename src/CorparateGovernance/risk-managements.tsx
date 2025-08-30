@@ -1,21 +1,18 @@
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import notice_2024 from '../Documents/Signed-Notice_AGM_2024.pdf'
-import notice_2023 from '../Documents/Notice-of-AGM-2023.pdf'
-import notice_2022 from '../Documents/AGM-Notice-02-09-2022.pdf'
-import notice_2021 from '../Documents/Notice-of-AGM_2021.pdf'
-import notice_2020 from '../Documents/Notice-of-AGM-2020.pdf'
+
 import cg from '../assets/img/corporate-governance.webp'
-import notice_2025 from '../Documents/Notice of AGM 2025.pdf'
+import disclosure1 from "../Documents/Public disclosure LRM Dec'24_FFPL.pdf"
+import disclosure2 from "../Documents/Public disclosure LRM Jun'25_FFPL.pdf"
+import disclosure3 from "../Documents/Public disclosure LRM Mar'25_FFPL.pdf"
+
 const notices = [
-    { title: "Notice of AGM 2025", link: `${notice_2025}` },
-  { title: "Notice of AGM 2024", link: `${notice_2024}` },
-  { title: "Notice of AGM 2023", link: `${notice_2023}` },
-  { title: "Notice of AGM 2022", link: `${notice_2022}` },
-  { title: "Notice of AGM 2021", link: `${notice_2021}` },
-  { title: "Notice of AGM 2020", link: `${notice_2020}` },
+    { title: "Disclosure LRM dec 2024", link: `${disclosure1}` },
+  { title: "Disclosure LRM jun 2025", link: `${disclosure2}` },
+  { title: "Disclosure LRM mar 2025", link: `${disclosure3}` },
+ 
 ];
 
-const AGMNotices = () => {
+const Riskmanagements = () => {
   return (
     <>
 <div className='w-full mt-1'>
@@ -44,4 +41,4 @@ const AGMNotices = () => {
   );
 };
 
-export default AGMNotices;
+export default Riskmanagements;

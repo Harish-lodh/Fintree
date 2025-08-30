@@ -5,9 +5,14 @@ import fairpractise from "../Documents/Fair-Practices-Code-v3.pdf"
 import itoutstanding from "../Documents/IT-Outsourcing-Policy.pdf"
 import auditpolicy from "../Documents/FFPL-Audit-Policy.pdf"
  import cg from '../assets/img/corporate-governance.webp'
+ import GrievanceRedressal from '../Documents/Grievance-redressal-mechanism.pdf'
+ import compromiseAndsettlement from '../Documents/Compromise-Settlement-Technical-Write-off-Policy_V.01.pdf'
+
 
  
 const policies = [
+  {title:'Grievance Redressal Mechanism',link:`${GrievanceRedressal}`},
+  {title:'Compromise & Settlement Policy',link:`${compromiseAndsettlement}`},
   { title: 'Interest Rate Model', link: `${interestmodel}` },
   { title: 'Fair Practice Code', link: `${fairpractise}` },
   { title: 'IT Outsourcing Policy', link: `${itoutstanding}` },

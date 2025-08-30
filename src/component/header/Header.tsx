@@ -42,12 +42,12 @@ const Header = () => {
     { name: "MGT-7", route: "corporate-governance/MGT-7" },
     { name: "Corporate Social Responsibility", route: "corporate-governance/csr" },
     { name: "DSA Code of Conduct", route: "corporate-governance/dsa-code" },
-    { name: "Grievance Redressal Mechanism", route: "corporate-governance/grievance-redressal" },
+    // { name: "Grievance Redressal Mechanism", route: "corporate-governance/grievance-redressal" },
     { name: "CKYC", route: "corporate-governance/ckyc" },
     { name: "Policies", route: "corporate-governance/policies" },
     { name: "Customer Education", route: "corporate-governance/customer-education" },
     { name: "Ombudsman Scheme", route: "corporate-governance/ombudsman-scheme" },
-    { name: "Compromise & Settlement Policy", route: "corporate-governance/compromise-settlement" },
+    { name: "Liquidity Risk Management", route: "corporate-governance/risk-management" },
   ];
 
   const handleNav = (route: string, selected?: string) => {

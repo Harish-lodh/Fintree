@@ -26,6 +26,7 @@ import DSA from './CorparateGovernance/DSA.tsx';
 import Grievance from './CorparateGovernance/Grievance.tsx';
 import ContactUs from './component/contact/index.tsx';
 import PrivacyPolicy from './component/privacy/index.tsx';
+import Riskmanagements from './CorparateGovernance/risk-managements.tsx';
 export default function App() {
     return (
         <>
@@ -53,9 +54,7 @@ export default function App() {
                         <Route path="corporate-governance/csr" element={<Corporatesocialres />} />
                         <Route path="corporate-governance/dsa-code" element={<DSA />} />
                         <Route path="corporate-governance/grievance-redressal" element={<Grievance />} />
-
-
-
+                        <Route path="corporate-governance/risk-management" element={<Riskmanagements />} />
 
                         <Route path='lending-service-provider' element={<LSPTable />} />
                         <Route path='/terms-of-service' element={<TermsOfServices />} />
