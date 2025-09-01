@@ -65,7 +65,7 @@ const LoanApplicationForm = () => {
   const [errors, setErrors] = useState<ErrorData>({});
   const [isRedirect, setIsRedirect] = useState(Boolean);
 
-const redirectUrl='https://fintreelms.testzypay.com/login';
+const redirectUrl='https://fintreelms.com/login';
 
   const validateField = (name: keyof FormData, value: string): true | string => {
     const today = new Date();
