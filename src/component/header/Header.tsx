@@ -48,6 +48,7 @@ const Header = () => {
     { name: "Customer Education", route: "corporate-governance/customer-education" },
     { name: "Ombudsman Scheme", route: "corporate-governance/ombudsman-scheme" },
     { name: "Liquidity Risk Management", route: "corporate-governance/risk-management" },
+    { name: "Procedure for Release of property", route: "corporate-governance/Release-of-property" },
   ];
 
   const handleNav = (route: string, selected?: string) => {
