@@ -7,8 +7,10 @@ import pdf2 from '../Documents/FORM_MGT-7-FY_22-23.pdf'
 import pdf3 from '../Documents/FORM_MGT-7-FY_21-22.pdf'
 import pdf4 from '../Documents/FORM_MGT-7-FY_20-21.pdf'
 import pdf5 from '../Documents/FORM_MGT-7-FY_19-20.pdf';
+import pdf6 from '../Documents/Form MGT 07.pdf';
 import cg from '../assets/img/corporate-governance.webp'
 const downloadLinks = [
+  { label: "MGT-7 2024-25", url: pdf6 },
   { label: "MGT-7 2023-24", url: pdf1 },
   { label: "MGT-7 2022-23", url: pdf2 },
   { label: "MGT-7 2021-22", url: pdf3 },
