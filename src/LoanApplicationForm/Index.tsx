@@ -145,7 +145,7 @@ const redirectUrl='https://fintreelms.com/login';
     try {
       const response = await sendEmail(form); // ✅ pass form data here
       console.log(response)
-      alert('Application submitted successfully!');
+      alert('✅ Application submitted successfully!');
     } catch (err) {
       alert('Error sending application.');
       console.error(err);
