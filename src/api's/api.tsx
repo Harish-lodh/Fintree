@@ -10,7 +10,7 @@ export interface FormData {
 
 export const sendEmail = async (data: FormData) => {
   try {
-    const response = await axiosInstance.post('/form/application', data);
+    const response = await axiosInstance.post('/FormApplication', data);
     return response.data;
   } catch (error) {
     console.error('Error sending email:', error);
