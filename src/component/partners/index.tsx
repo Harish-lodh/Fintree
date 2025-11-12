@@ -38,19 +38,19 @@ const servicePartners = [
 ]
 
 const pastPartners = [
-  { src: unity1, alt: "Unity", url: "https://www.unitysmallfinancebank.in" },
+  { src: unity1, alt: "Unity", url: "" },
   { src: club, alt: "EMI Club", url: "https://theemiclub.com" },
   { src: paytail, alt: "Paytail", url: "https://paytail.com" },
-  { src: sdal, alt: "SDAL", url: "https://www.sdal.in" },
+  { src: sdal, alt: "SDAL", url: "" },
   { src: okcf, alt: "OK Credit Finance", url: "https://okcredit.in" },
   { src: fundfina, alt: "Fundfina", url: "https://fundfina.com" },
   { src: finrm, alt: "FinRM", url: "" },
-  { src: financepeer, alt: "FinancePeer", url: "https://financepeer.com" },
+  { src: financepeer, alt: "FinancePeer", url: "" },
   { src: embi, alt: "Embi", url: "https://embifi.in" },
   { src: credin, alt: "Credin", url: "https://credin.in" },
   { src: cashtree, alt: "Cashtree", url: "https://cashtree.in" },
-  { src: aldun, alt: "Aldun", url: "https://aldun.in" },
-  { src: scholfe, alt: "Scholfe", url: "https://scholfe.com" },
+  { src: aldun, alt: "Aldun", url: "" },
+  { src: scholfe, alt: "Scholfe", url: "" },
 ]
 
 const Partners = () => {
@@ -106,20 +106,34 @@ const Partners = () => {
         <h2 className="text-blue-800 text-3xl font-bold my-6 text-center">Past Partners</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 place-items-center">
           {pastPartners.map((partner, idx) => (
-            <a
-              key={idx}
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transform transition-transform duration-300 hover:scale-110"
-            >
-              <img
-                src={partner.src}
-                alt={partner.alt}
-                className="h-24 w-40 object-contain"
-              />
-            </a>
+            partner.url && partner.url !== "#" ? (
+              <a
+                key={idx}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src={partner.src}
+                  alt={partner.alt}
+                  className="h-24 w-40 object-contain"
+                />
+              </a>
+            ) : (
+              <div
+                key={idx}
+                className="transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src={partner.src}
+                  alt={partner.alt}
+                  className="h-24 w-40 object-contain"
+                />
+              </div>
+            )
           ))}
+
         </div>
       </div>
 
