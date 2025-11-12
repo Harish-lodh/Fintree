@@ -1,16 +1,15 @@
 import { Box, Button, Typography } from '@mui/material';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import interestmodel from "../Documents/INTEREST-RATE-MODEL-1.3.pdf"
-import fairpractise from "../Documents/Fair-Practices-Code-v3.pdf"
-import itoutstanding from "../Documents/IT-Outsourcing-Policy.pdf"
-import auditpolicy from "../Documents/FFPL-Audit-Policy.pdf"
+import fairpractise from "../Documents/Fair-Practice-Code-v3.pdf"
+import itoutstanding from "../Documents/IT_Outsourcing_Policy_version1.pdf"
+import statutoryauditpolicy from "../Documents/Policy_on_Appointment_of_Statutory_Auditor.pdf"
 import cg from '../assets/img/corporate-governance.webp'
 import Fpc_hindi from '../Documents/Fair practice code_Hindi.pdf'
 import Fpc_marathi from '../Documents/Fair practice code_marathi.pdf'
 import GrievanceRedressal from '../Documents/Grievance-redressal-mechanism.pdf'
-import compromiseAndsettlement from '../Documents/Compromise-Settlement-Technical-Write-off-Policy_V.01.pdf'
-
-
+import compromiseAndsettlement from '../Documents/Compromise-Settlements _Technical_Write_off_Policy.pdf'
+ 
 
 const policies = [
   { title: 'Grievance Redressal Mechanism', link: `${GrievanceRedressal}` },
@@ -18,7 +17,7 @@ const policies = [
   { title: 'Interest Rate Model', link: `${interestmodel}` },
   { title: 'Fair Practice Code', link: `${fairpractise}` },
   { title: 'IT Outsourcing Policy', link: `${itoutstanding}` },
-  { title: 'Audit Policy', link: `${auditpolicy}` },
+  { title: 'Statutory Audit Policy', link: `${statutoryauditpolicy}` },
   { title: 'Fair Practice Code (Hindi)', link: `${Fpc_hindi}` },
   { title: 'Fair Practice Code (Marathi)', link: `${Fpc_marathi}` }
 
