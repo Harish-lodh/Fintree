@@ -5,65 +5,66 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import refundPdf from "../../Documents/REFUND AND CANCELLATION TERMS (002).pdf";
 
 import logo from '../../assets/nav-logo.jpeg'
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const Footer = () => {
-function ScrollToTop() {
-  const { pathname } = useLocation();
+  function ScrollToTop() {
+    const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [pathname]);
 
-  return null;
-};
+    return null;
+  };
 
-const socialIcons = [
-  { 
-    icon: <LinkedInIcon className="!w-7 !h-7" />, 
-    bgColor: 'bg-blue-900', 
-    hoverColor: 'hover:bg-blue-900',
-    href: 'http://linkedin.com/company/fintree-finance/' 
-  },
-  { 
-    icon: <FacebookIcon className="!w-7 !h-7" />, 
-    bgColor: 'bg-blue-600', 
-    hoverColor: 'hover:bg-blue-800',
-    href: 'https://www.facebook.com/profile.php?id=100064084087872#' 
-  },
-  { 
-    icon: <TwitterIcon className="!w-7 !h-7" />, 
-    bgColor: 'bg-blue-400', 
-    hoverColor: 'hover:bg-blue-500',
-    href: 'https://x.com/fintreel?lang=en' 
-  },
-];
+  const socialIcons = [
+    {
+      icon: <LinkedInIcon className="!w-7 !h-7" />,
+      bgColor: 'bg-blue-900',
+      hoverColor: 'hover:bg-blue-900',
+      href: 'http://linkedin.com/company/fintree-finance/'
+    },
+    {
+      icon: <FacebookIcon className="!w-7 !h-7" />,
+      bgColor: 'bg-blue-600',
+      hoverColor: 'hover:bg-blue-800',
+      href: 'https://www.facebook.com/profile.php?id=100064084087872#'
+    },
+    {
+      icon: <TwitterIcon className="!w-7 !h-7" />,
+      bgColor: 'bg-blue-400',
+      hoverColor: 'hover:bg-blue-500',
+      href: 'https://x.com/fintreel?lang=en'
+    },
+  ];
 
 
-const quickLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about-us' },
-  { name: 'Contact Us', path: '/contact-us' }
-];
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Contact Us', path: '/contact-us' }
+  ];
 
-const otherLinks = [
-  { name: 'Terms of Service', path: '/terms-of-service' },
-  { name: 'Fintree Privacy Policy', path: '/privacy-policy' },
-  // { name: 'Certificates', path: '/certificates' },
-  // { name: 'Schedule of Charges', path: '/schedule-of-charges' },
-  // { name: 'CMS Portal', path: '/cms-portal' },
-  { name: 'Sachet Portal', path: 'https://sachet.rbi.org.in/' }
-];
+  const otherLinks = [
+    { name: 'Terms of Service', path: '/terms-of-service' },
+    { name: 'Refund and cancellation terms', path: refundPdf, external: true },// after click on this link 
+    { name: 'Fintree Privacy Policy', path: '/privacy-policy' },
+    // { name: 'Schedule of Charges', path: '/schedule-of-charges' },
+    // { name: 'CMS Portal', path: '/cms-portal' },
+    { name: 'Sachet Portal', path: 'https://sachet.rbi.org.in/', external: true }
+  ];
 
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-8 px-4 relative min-h-70">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
+
           {/* Company Logo and Social */}
           <div className="space-y-6">
             {/* Logo Section */}
@@ -77,7 +78,7 @@ const otherLinks = [
                 <p className="text-gray-500 text-xs">Empowering SME Growth</p>
               </div>
             </div>
-            
+
             {/* Social Media Section */}
             <div>
               <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
@@ -103,55 +104,72 @@ const otherLinks = [
             </div>
           </div>
 
-    {/* Quick Links */}
-<div>
-  <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-    <span className="mr-2">⚡</span> Quick Links
-  </h4>
-  <ul className="space-y-3">
-    {quickLinks.map((link, index) => (
-      <li key={index}>
-        <Link
-          to={link.path}
-          onClick={ScrollToTop}
-          className="
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
+              <span className="mr-2">⚡</span> Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.path}
+                    onClick={ScrollToTop}
+                    className="
             text-gray-400 hover:text-white text-sm 
             transition-all duration-300 ease-out 
             block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
             focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
           "
-        >
-          {link.name}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-{/* Other Links */}
-<div>
-  <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-    <span className="mr-2">🔗</span> Other Links
-  </h4>
-  <ul className="space-y-3">
-    {otherLinks.map((link, index) => (
-      <li key={index}>
-        <Link
-          to={link.path}
-           onClick={ScrollToTop}
-          className="
-            text-gray-400 hover:text-white text-sm 
-            transition-all duration-300 ease-out 
-            block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
-            focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
-          "
-        >
-          {link.name}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+          {/* Other Links */}
+          <div>
+            <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
+              <span className="mr-2">🔗</span> Other Links
+            </h4>
+            <ul className="space-y-3">
+              {otherLinks.map((link, index) => (
+                <li key={index}>
+                  {link.external ? (
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+      text-gray-400 hover:text-white text-sm 
+      transition-all duration-300 ease-out 
+      block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
+      focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
+    "
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      onClick={ScrollToTop}
+                      className="
+      text-gray-400 hover:text-white text-sm 
+      transition-all duration-300 ease-out 
+      block py-1 hover:pl-2 hover:border-l-2 hover:border-blue-500
+      focus:outline-none focus:text-white focus:pl-2 focus:border-l-2 focus:border-blue-500
+    "
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+
+                </li>
+              ))}
+            </ul>
+          </div>
 
 
           {/* Corporate Office */}
@@ -159,8 +177,8 @@ const otherLinks = [
             {/* Main Office */}
             <div>
               <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4 flex items-center">
-               <LocationOnIcon className="!w-4 !h-4 mr-2" />
- Corporate Office - Mumbai
+                <LocationOnIcon className="!w-4 !h-4 mr-2" />
+                Corporate Office - Mumbai
               </h4>
               <div className="space-y-2 text-sm">
                 <p className="text-white font-medium">Fintree Finance Pvt. Ltd.</p>
@@ -169,8 +187,8 @@ const otherLinks = [
                   <p>9 Matthew Road, Opera House,</p>
                   <p className="mb-3">Mumbai - 400004</p>
                 </div>
-                <a 
-                  href="mailto:wecarefintree@gmail.com" 
+                <a
+                  href="mailto:wecarefintree@gmail.com"
                   className="
                     text-blue-400 hover:text-blue-300 
                     transition-colors duration-300 ease-out 
@@ -210,9 +228,9 @@ const otherLinks = [
             </div>
           </div>
 
-           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">© 2025 Fintree Finance. All rights reserved.</p>
-    
+
           </div>
         </div>
 
