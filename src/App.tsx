@@ -28,7 +28,7 @@ import ContactUs from './component/contact/index.tsx';
 import PrivacyPolicy from './component/privacy/index.tsx';
 import Riskmanagements from './CorparateGovernance/risk-managements.tsx';
 import Releaseofproperty from './CorparateGovernance/Release-of-property.tsx';
-import CollectionPrivacyPolicy from "../src/component/privacy/zypay.tsx"
+import CollectionPrivacyPolicy from "./component/privacy/collection.tsx"
 export default function App() {
     return (
         <>
@@ -63,7 +63,7 @@ export default function App() {
                         <Route path='lending-service-provider' element={<LSPTable />} />
                         <Route path='/terms-of-service' element={<TermsOfServices />} />
                         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-                        <Route path='/collection/privacy-policy' element={<CollectionPrivacyPolicy />} />
+                        <Route path='/finCollect/privacy-policy' element={<CollectionPrivacyPolicy />} />
                         <Route path='/contact-us' element={<ContactUs />} />
                         <Route path='/about-us' element={<About />} />
                     </Routes>
