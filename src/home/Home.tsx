@@ -7,6 +7,7 @@ import FAQ from '../component/FAQ\'s';
 import { useNavigate } from 'react-router-dom';
 import Awards from '../component/awards';
 import Partners from '../component/partners';
+import { useEffect, useState } from 'react';
 const Home = () => {
   const navigate = useNavigate();
     const handleClick = () => {
@@ -19,8 +20,82 @@ const goToPage = (path:string) => {
   navigate(path);
 };
 
+
+const [showDisclaimer, setShowDisclaimer] = useState(false);
+
+  useEffect(() => {
+    // Show modal on initial load (you can adjust this logic, e.g., check localStorage)
+    const hasSeenDisclaimer = localStorage.getItem('hasSeenDisclaimer');
+    if (!hasSeenDisclaimer) {
+      setShowDisclaimer(true);
+    }
+  }, []);
+
+
+  const handleCanlceDisclaimer=()=>{
+    setShowDisclaimer(false);
+  }
+  const handleCloseDisclaimer = () => {
+    setShowDisclaimer(false);
+    localStorage.setItem('hasSeenDisclaimer', 'true');
+  };
+
+
+const DisclaimerModal = () => (
+    <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-6 rounded-lg max-w-4xl max-h-[80vh] overflow-y-auto mx-4">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold text-blue-800">Disclaimer</h3>
+          <button
+            onClick={handleCanlceDisclaimer}
+            className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+          >
+            ×
+          </button>
+        </div>
+        <div className="text-gray-700 text-sm leading-relaxed">
+          <p>
+            This is to inform user/customer(s) that{' '}
+            <a href="https://fintreefinance.com" className="text-blue-600 hover:underline">
+              https://fintreefinance.com
+            </a>{' '}
+            is the ONLY official website of Fintree Finance Private Limited. The information contained on this website is for general information purposes only. It has come to our notice that Fintree Finance Private Limited's name and/or its logo are being used wrongfully by unauthorized entities to offer personal loans for and on behalf of Fintree Finance Private Limited. User/Customer(s) are cautioned and advised not to rely upon any information stated on any other websites which may appear to be similar to the company's official website, including containing the company's logo/brand name. FINTREE FINANCE PRIVATE LIMITED doesn’t ask for upfront payment in any form and sanctions loans only after assessment. Under no circumstances, FINTREE FINANCE PRIVATE LIMITED shall be liable and/or responsible to honour transactions which do not clearly mention the payment has been made to FINTREE FINANCE PRIVATE LIMITED. Your use of information or materials on other website(s) is entirely at your own risk, for which we shall not be liable. Always check the information on this website carefully before you act. It is clarified that unauthorized use of FINTREE FINANCE PRIVATE LIMITED’s name, its logo and/or its website, is strictly prohibited and may give rise to a claim for damages and/or be tried as a criminal offence. We communicate with our clients and prospects only through the mail ID{' '}
+            <a href="mailto:wecare@fintreefinance.com" className="text-blue-600 hover:underline">
+              wecare@fintreefinance.com
+            </a>{' '}
+            or email with the{' '}
+            <a href="http://fintreefinance.com" className="text-blue-600 hover:underline">
+              fintreefinance.com
+            </a>{' '}
+            domain name.
+          </p>
+
+          Our associated lending service providers and partners are listed only on our
+official website at{" "}
+<a
+  href="https://fintreefinance.com/Lending-Service-Provider"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-blue-800 font-semibold hover:underline"
+>
+  https://fintreefinance.com/Lending-Service-Provider
+</a>.
+        </div>
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={handleCloseDisclaimer}
+            className="bg-blue-800 hover:bg-blue-900 text-white font-medium rounded-lg text-sm px-4 py-2"
+          >
+            I Understand
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen w-full ">
+      {showDisclaimer && <DisclaimerModal />}
 <div className="bg-stone-600 w-full p-2">
 <div className="flex justify-end items-center space-x-4 mr-6">
   <ul className="flex space-x-4">

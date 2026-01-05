@@ -8,7 +8,7 @@ import contactBanner from '../../assets/img/contact-banner.jpg'
 
 
 
-const showValue = (value:any) => {
+const showValue = (value: any) => {
   return value && value.toString().trim() !== "" ? value : "-";
 };
 
@@ -22,6 +22,7 @@ const lspData = [
     mobileNumber: "6364690681",
     emailId: "help@okcredit.in",
     website: "OkCredit",
+    playstoreUrl: "https://play.google.com/store/apps/details?id=in.okcredit.merchant&referrer=af_tranid%3Do34fmTllSuKAB1SVDBU7wA%26af_dp%3Dokcredit%253A%252F%252Fmerchant%252Fv1%252Fhome%26c%3DHomePage%26pid%3DWebsite_OkCredit",
     websiteUrl: "https://okcredit.in",
   },
   {
@@ -33,7 +34,7 @@ const lspData = [
     mobileNumber: "7742127239",
     emailId: "INFO@SDAL.IN",
     website: "sagar-deposits",
-    websiteUrl: "https://sagar-deposits.com",
+    websiteUrl: "https://www.sagardeposits.com/",
   },
   {
     sno: "03",
@@ -51,10 +52,11 @@ const lspData = [
     name: "TRUSTBRIDGE TECHNOLOGIES PRIVATE LIMITED",
     appName: "Aldun",
     product: "instant discharge and reimbursement product",
-    nameOfOfficer: "Shivani Thorbole",
+    nameOfOfficer: "",
     mobileNumber: "",
-    emailId: "grievance@theemiclub.com",
-    website: "",
+    emailId: "",
+    website: "Aldun",
+    websiteUrl: "https://www.aldun.com/"
   },
   {
     sno: "05",
@@ -64,7 +66,8 @@ const lspData = [
     nameOfOfficer: "",
     mobileNumber: "",
     emailId: "",
-    website: "",
+    website: "HEALTHCRED",
+    websiteUrl: "https://healthcred.co.in/"
   },
   {
     sno: "06",
@@ -147,7 +150,8 @@ const lspData = [
     nameOfOfficer: "",
     mobileNumber: "",
     emailId: "",
-    website: "",
+    website: "Paytail",
+    websiteUrl: "https://www.paytail.com/",
   },
   {
     sno: "14",
@@ -192,6 +196,13 @@ const LSPTable = () => {
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, itemsPerPage]);
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [currentPage]);
+
 
   return (
     <>
@@ -257,54 +268,54 @@ const LSPTable = () => {
               {currentData.map((item, index) => (
                 <tr key={index} className="hover:bg-blue-50 transition-colors duration-200">
                   <td className="px-6 py-4 text-sm font-medium text-gray-900">
-  {showValue(item.sno)}
-</td>
+                    {showValue(item.sno)}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {showValue(item.name)}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {showValue(item.name)}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {item.appName ? (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-      {item.appName}
-    </span>
-  ) : (
-    <span className="text-gray-400">-</span>
-  )}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {item.appName ? (
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        {item.appName}
+                      </span>
+                    ) : (
+                      <span className="text-gray-400">-</span>
+                    )}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {showValue(item.product)}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {showValue(item.product)}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {showValue(item.nameOfOfficer)}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {showValue(item.nameOfOfficer)}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {showValue(item.mobileNumber)}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {showValue(item.mobileNumber)}
+                  </td>
 
-<td className="px-6 py-4 text-sm text-gray-900">
-  {showValue(item.emailId)}
-</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {showValue(item.emailId)}
+                  </td>
 
-<td className="px-6 py-4 text-sm">
-  {item.websiteUrl ? (
-    <a
-      href={item.websiteUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-    >
-      {showValue(item.website)}
-      <LaunchIcon className="ml-1" style={{ fontSize: "16px" }} />
-    </a>
-  ) : (
-    <span className="text-gray-400">-</span>
-  )}
-</td>
+                  <td className="px-6 py-4 text-sm">
+                    {item.websiteUrl ? (
+                      <a
+                        href={item.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                      >
+                        {showValue(item.website)}
+                        <LaunchIcon className="ml-1" style={{ fontSize: "16px" }} />
+                      </a>
+                    ) : (
+                      <span className="text-gray-400">-</span>
+                    )}
+                  </td>
 
                 </tr>
               ))}
