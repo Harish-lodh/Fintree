@@ -197,11 +197,11 @@ const LSPTable = () => {
     setCurrentPage(1);
   }, [searchTerm, itemsPerPage]);
   useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}, [currentPage]);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
 
 
   return (
@@ -276,14 +276,35 @@ const LSPTable = () => {
                   </td>
 
                   <td className="px-6 py-4 text-sm text-gray-900">
-                    {item.appName ? (
+                    {item.appName && item.playstoreUrl ? (
+                      <a
+                        href={item.playstoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200"
+                      >
+                        {item.appName}
+                        <LaunchIcon style={{ fontSize: "14px" }} />
+                      </a>
+                    ) : item.appName ? (
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         {item.appName}
                       </span>
+                    ) : item.playstoreUrl ? (
+                      <a
+                        href={item.playstoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                      >
+                        Play Store
+                        <LaunchIcon className="ml-1" style={{ fontSize: "16px" }} />
+                      </a>
                     ) : (
                       <span className="text-gray-400">-</span>
                     )}
                   </td>
+
 
                   <td className="px-6 py-4 text-sm text-gray-900">
                     {showValue(item.product)}
