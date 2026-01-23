@@ -1,19 +1,29 @@
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { useTheme } from '@mui/material/styles';
-import Ombudsmanfile from "../Documents/Integrated-Ombudsman-Scheme-2021.pdf";
-import SilentOmbudsman from "../Documents/Salient-features_Integrated-Ombudsman-Scheme2021.pdf";
+import English from "../Documents/Salient features_integrated ombudsman scheme 2026-English.pdf";
+import Hindi from "../Documents/Salient features_integrated ombudsman scheme 2026-Hindi.pdf";
+import marathi from "../Documents/Salient features_integrated ombudsman scheme 2026-Marathi.pdf";
+import RbiScheme from "../Documents/RBI-Integrated Ombudsman Scheme, 2026.pdf";
  import cg from '../assets/img/corporate-governance.webp'
 
 
 const downloads = [
   {
-    title: 'RBI Integrated Ombudsman Scheme 2021',
-    file: `${Ombudsmanfile}`,
+    title: 'Salient features_integrated ombudsman scheme 2026-English',
+    file: `${English}`,
   },
   {
-    title: 'Salient features_Integrated Ombudsman Scheme,2021',
-    file: `${SilentOmbudsman}`,
+    title: 'Salient features_integrated ombudsman scheme 2026-Hindi.pdf',
+    file: `${Hindi}`,
+  },
+    {
+    title: 'Salient features_integrated ombudsman scheme 2026-Marathi',
+    file: `${marathi}`,
+  },
+    {
+    title: 'RBI-Integrated Ombudsman Scheme, 2026.pdf',
+    file: `${RbiScheme}`,
   },
 ];
 
