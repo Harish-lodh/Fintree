@@ -19,7 +19,7 @@ const branches = [
 
 const LAP = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedBranch, setSelectedBranch] = useState(null);
+const [selectedBranch, setSelectedBranch] = useState<number | null>(null);
 
   const filteredBranches = branches.filter(branch =>
     branch.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
