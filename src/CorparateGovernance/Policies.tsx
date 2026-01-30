@@ -7,7 +7,7 @@ import statutoryauditpolicy from "../Documents/Policy_on_Appointment_of_Statutor
 import cg from '../assets/img/corporate-governance.webp'
 import Fpc_hindi from '../Documents/Fair practice code_Hindi.pdf'
 import Fpc_marathi from '../Documents/Fair practice code_marathi.pdf'
-import GrievanceRedressal from '../Documents/Grievance-redressal-mechanism.pdf'
+import GrievanceRedressal from '../Documents/Grievance redressal mechanism_2026.pdf'
 import compromiseAndsettlement from '../Documents/Compromise-Settlements _Technical_Write_off_Policy.pdf'
  
 

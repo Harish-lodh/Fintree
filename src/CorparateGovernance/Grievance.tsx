@@ -5,7 +5,7 @@ import {
   Typography
 } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import Grievance_folder from "../Documents/Grievance-redressal-mechanism.pdf"
+import Grievance_folder from "../Documents/Grievance redressal mechanism_2026.pdf"
 import cg from '../assets/img/corporate-governance.webp'
 const Grievance = () => {
   return (
