@@ -29,6 +29,7 @@ import PrivacyPolicy from './component/privacy/index.tsx';
 import Riskmanagements from './CorparateGovernance/risk-managements.tsx';
 import Releaseofproperty from './CorparateGovernance/Release-of-property.tsx';
 import CollectionPrivacyPolicy from "./component/privacy/collection.tsx"
+import InternalComplaintCommittee from './CorparateGovernance/ComplaintCommittee.tsx';
 export default function App() {
     return (
         <>
@@ -58,6 +59,7 @@ export default function App() {
                         <Route path="corporate-governance/grievance-redressal" element={<Grievance />} />
                         <Route path="corporate-governance/risk-management" element={<Riskmanagements />} />
                         <Route path="corporate-governance/Release-of-property" element={<Releaseofproperty />} />
+                        <Route path="corporate-governance/internal-complaint-committee" element={<InternalComplaintCommittee />} />
 
 
                         <Route path='lending-service-provider' element={<LSPTable />} />

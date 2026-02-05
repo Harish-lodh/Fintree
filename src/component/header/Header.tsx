@@ -49,12 +49,14 @@ const Header = () => {
     { name: "Ombudsman Scheme", route: "corporate-governance/ombudsman-scheme" },
     { name: "Liquidity Risk Management", route: "corporate-governance/risk-management" },
     { name: "Procedure for Release of property", route: "corporate-governance/Release-of-property" },
+    { name: "Internal Complaint Committee", route: "corporate-governance/internal-complaint-committee" },
+
   ];
 
   const handleNav = (route: string, selected?: string) => {
     navigate(route);
     setHoveredMenu(null);
-     window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 force scroll up
+    window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 force scroll up
     setMobileSubMenu(null);
     if (selected) setIsselected(selected);
     setMenuOpen(false); // also closes mobile menu
@@ -75,9 +77,8 @@ const Header = () => {
           <nav className="hidden lg:flex space-x-6 text-xl font-semibold relative">
             <button
               onClick={() => handleNav("/", "home")}
-              className={`hover:text-blue-700 transition-colors duration-200 ${
-                isselected === "home" ? "text-blue-700" : ""
-              }`}
+              className={`hover:text-blue-700 transition-colors duration-200 ${isselected === "home" ? "text-blue-700" : ""
+                }`}
             >
               Home
             </button>
@@ -91,17 +92,15 @@ const Header = () => {
               <button className="flex items-center gap-1 hover:text-blue-700 transition-colors duration-200">
                 Product
                 <ChevronDownIcon
-                  className={`transition-transform duration-200 ${
-                    hoveredMenu === "product" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${hoveredMenu === "product" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
-                  hoveredMenu === "product"
+                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${hoveredMenu === "product"
                     ? "opacity-100 visible transform translate-y-0"
                     : "opacity-0 invisible transform -translate-y-2"
-                }`}
+                  }`}
               >
                 <div className="py-2">
                   {productLinks.map((link) => (
@@ -134,17 +133,15 @@ const Header = () => {
               <button className="flex items-center gap-1 hover:text-blue-700 transition-colors duration-200">
                 Corporate Governance
                 <ChevronDownIcon
-                  className={`transition-transform duration-200 ${
-                    hoveredMenu === "corporate" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-200 ${hoveredMenu === "corporate" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${
-                  hoveredMenu === "corporate"
+                className={`absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden transition-all duration-200 ${hoveredMenu === "corporate"
                     ? "opacity-100 visible transform translate-y-0"
                     : "opacity-0 invisible transform -translate-y-2"
-                }`}
+                  }`}
               >
                 <div className="py-2 max-h-102 overflow-y-auto">
                   {corpGovLinks.map((link) => (
@@ -167,18 +164,16 @@ const Header = () => {
 
             <button
               onClick={() => handleNav("/Lending-Service-Provider", "lsp")}
-              className={`hover:text-blue-700 transition-colors duration-200 ${
-                isselected === "lsp" ? "text-blue-700" : ""
-              }`}
+              className={`hover:text-blue-700 transition-colors duration-200 ${isselected === "lsp" ? "text-blue-700" : ""
+                }`}
             >
               LendingServiceProvider
             </button>
 
             <button
               onClick={() => handleNav("/about-us", "about")}
-              className={`hover:text-blue-700 transition-colors duration-200 ${
-                isselected === "about" ? "text-blue-700" : ""
-              }`}
+              className={`hover:text-blue-700 transition-colors duration-200 ${isselected === "about" ? "text-blue-700" : ""
+                }`}
             >
               About-Us
             </button>
@@ -290,9 +285,8 @@ const Header = () => {
                   >
                     Products
                     <ChevronDownIcon
-                      className={`transition-transform duration-200 ${
-                        mobileSubMenu === "product" ? "rotate-180" : ""
-                      }`}
+                      className={`transition-transform duration-200 ${mobileSubMenu === "product" ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
                   {mobileSubMenu === "product" && (
@@ -318,9 +312,8 @@ const Header = () => {
                   >
                     Corporate Governance
                     <ChevronDownIcon
-                      className={`transition-transform duration-200 ${
-                        mobileSubMenu === "corporate" ? "rotate-180" : ""
-                      }`}
+                      className={`transition-transform duration-200 ${mobileSubMenu === "corporate" ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
                   {mobileSubMenu === "corporate" && (
